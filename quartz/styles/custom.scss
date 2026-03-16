@@ -1,3 +1,150 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+:root {
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.28s ease;
+}
+
+#quartz-body {
+  column-gap: 2rem !important;
+}
+
+.page-footer {
+  border-top: 1px solid var(--lightgray);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+.page-footer + hr {
+  display: none;
+}
+
+body {
+  line-height: 1.7;
+}
+
+a {
+  transition: color var(--transition-fast);
+}
+
+::selection {
+  background: var(--highlight);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lightgray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray);
+}
+
+article {
+  & > h1 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+  }
+
+  & h2,
+  & h3,
+  & h4 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+  }
+}
+
+pre {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+code {
+  border-radius: 4px;
+}
+
+blockquote {
+  border-left: 3px solid var(--secondary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+table {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+th,
+td {
+  border-color: var(--lightgray);
+}
+
+button,
+.search-button {
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.sidebar {
+  border-right: 1px solid var(--lightgray);
+}
+
+.recent-notes {
+  & > ul > li {
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+
+    &:hover {
+      background: var(--highlight);
+    }
+  }
+}
+
+.explorer {
+  & ul {
+    & > li {
+      border-radius: var(--radius-sm);
+      transition: background var(--transition-fast);
+
+      &:hover {
+        background: var(--highlight);
+      }
+    }
+  }
+}
+
+.backlinks {
+  & > ul > li {
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+
+    &:hover {
+      background: var(--highlight);
+    }
+  }
+}
+
+.graph-view {
+  & > svg {
+    border-radius: var(--radius-md);
+  }
+}
+
+footer {
+  border-top: 1px solid var(--lightgray);
+}
