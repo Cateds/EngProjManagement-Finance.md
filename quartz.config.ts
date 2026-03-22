@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "zh-CN",
-    baseUrl: "https://cateds.github.io/EngProjManagement-Finance.md",
+    baseUrl: "cateds.github.io/EngProjManagement-Finance.md",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
