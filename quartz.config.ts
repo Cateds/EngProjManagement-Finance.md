@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "zh-CN",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "cateds.github.io/EngProjManagement-Finance.md",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
@@ -25,7 +25,7 @@ const config: QuartzConfig = {
       typography: {
         header: "Noto Serif SC",
         body: "Inter",
-        code: "JetBrains Mono",
+        code: "Cascadia Code",
       },
       colors: {
         lightMode: {
