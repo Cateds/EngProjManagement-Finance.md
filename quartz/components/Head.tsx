@@ -1,10 +1,10 @@
-import { i18n } from "../i18n"
-import { FullSlug, getFileExtension, joinSegments, pathToRoot } from "../util/path"
-import { CSSResourceToStyleElement, JSResourceToScriptElement } from "../util/resources"
-import { googleFontHref, googleFontSubsetHref } from "../util/theme"
-import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import { unescapeHTML } from "../util/escape"
-import { CustomOgImagesEmitterName } from "../plugins/emitters/ogImage"
+import { i18n } from "../i18n";
+import { FullSlug, getFileExtension, joinSegments, pathToRoot } from "../util/path";
+import { CSSResourceToStyleElement, JSResourceToScriptElement } from "../util/resources";
+import { googleFontHref, googleFontSubsetHref } from "../util/theme";
+import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types";
+import { unescapeHTML } from "../util/escape";
+import { CustomOgImagesEmitterName } from "../plugins/emitters/ogImage";
 export default (() => {
   const Head: QuartzComponent = ({
     cfg,
@@ -12,29 +12,29 @@ export default (() => {
     externalResources,
     ctx,
   }: QuartzComponentProps) => {
-    const titleSuffix = cfg.pageTitleSuffix ?? ""
+    const titleSuffix = cfg.pageTitleSuffix ?? "";
     const title =
-      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
+      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix;
     const description =
       fileData.frontmatter?.socialDescription ??
       fileData.frontmatter?.description ??
-      unescapeHTML(fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description)
+      unescapeHTML(fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description);
 
-    const { css, js, additionalHead } = externalResources
+    const { css, js, additionalHead } = externalResources;
 
-    const url = new URL(`https://${cfg.baseUrl ?? "example.com"}`)
-    const path = url.pathname as FullSlug
-    const baseDir = fileData.slug === "404" ? path : pathToRoot(fileData.slug!)
-    const iconPath = joinSegments(baseDir, "static/icon.png")
+    const url = new URL(`https://${cfg.baseUrl ?? "example.com"}`);
+    const path = url.pathname as FullSlug;
+    const baseDir = fileData.slug === "404" ? path : pathToRoot(fileData.slug!);
+    const iconPath = joinSegments(baseDir, "static/icon.png");
 
     // Url of current page
     const socialUrl =
-      fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!)
+      fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!);
 
     const usesCustomOgImage = ctx.cfg.plugins.emitters.some(
       (e) => e.name === CustomOgImagesEmitterName,
-    )
-    const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`
+    );
+    const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`;
 
     return (
       <head>
@@ -92,14 +92,14 @@ export default (() => {
           .map((res) => JSResourceToScriptElement(res, true))}
         {additionalHead.map((resource) => {
           if (typeof resource === "function") {
-            return resource(fileData)
+            return resource(fileData);
           } else {
-            return resource
+            return resource;
           }
         })}
       </head>
-    )
-  }
+    );
+  };
 
-  return Head
-}) satisfies QuartzComponentConstructor
+  return Head;
+}) satisfies QuartzComponentConstructor;

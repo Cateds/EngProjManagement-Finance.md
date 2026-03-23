@@ -1,4 +1,4 @@
-import { Translation } from "./definition"
+import { Translation } from "./definition";
 
 export default {
   propertyDefaults: {
@@ -86,4 +86,4 @@ export default {
         count === 1 ? "Trovata 1 etichetta in totale." : `Trovate ${count} etichette totali.`,
     },
   },
-} as const satisfies Translation
+} as const satisfies Translation;

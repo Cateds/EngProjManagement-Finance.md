@@ -1,8 +1,8 @@
-import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
+import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types";
 
 const Header: QuartzComponent = ({ children }: QuartzComponentProps) => {
-  return children.length > 0 ? <header>{children}</header> : null
-}
+  return children.length > 0 ? <header>{children}</header> : null;
+};
 
 Header.css = `
 header {
@@ -17,6 +17,6 @@ header h1 {
   margin: 0;
   flex: auto;
 }
-`
+`;
 
-export default (() => Header) satisfies QuartzComponentConstructor
+export default (() => Header) satisfies QuartzComponentConstructor;

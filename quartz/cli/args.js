@@ -11,7 +11,7 @@ export const CommonArgv = {
     default: false,
     describe: "print out extra logging information",
   },
-}
+};
 
 export const CreateArgv = {
   ...CommonArgv,
@@ -32,7 +32,7 @@ export const CreateArgv = {
     choices: ["absolute", "shortest", "relative"],
     describe: "strategy to resolve links",
   },
-}
+};
 
 export const SyncArgv = {
   ...CommonArgv,
@@ -56,7 +56,7 @@ export const SyncArgv = {
     default: true,
     describe: "pull updates from your Quartz fork",
   },
-}
+};
 
 export const BuildArgv = {
   ...CommonArgv,
@@ -105,4 +105,4 @@ export const BuildArgv = {
     number: true,
     describe: "how many threads to use to parse notes",
   },
-}
+};

@@ -1,22 +1,22 @@
-import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import style from "./styles/search.scss"
+import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types";
+import style from "./styles/search.scss";
 // @ts-ignore
-import script from "./scripts/search.inline"
-import { classNames } from "../util/lang"
-import { i18n } from "../i18n"
+import script from "./scripts/search.inline";
+import { classNames } from "../util/lang";
+import { i18n } from "../i18n";
 
 export interface SearchOptions {
-  enablePreview: boolean
+  enablePreview: boolean;
 }
 
 const defaultOptions: SearchOptions = {
   enablePreview: true,
-}
+};
 
 export default ((userOpts?: Partial<SearchOptions>) => {
   const Search: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
-    const opts = { ...defaultOptions, ...userOpts }
-    const searchPlaceholder = i18n(cfg.locale).components.search.searchBarPlaceholder
+    const opts = { ...defaultOptions, ...userOpts };
+    const searchPlaceholder = i18n(cfg.locale).components.search.searchBarPlaceholder;
     return (
       <div class={classNames(displayClass, "search")}>
         <button class="search-button">
@@ -43,11 +43,11 @@ export default ((userOpts?: Partial<SearchOptions>) => {
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
 
-  Search.afterDOMLoaded = script
-  Search.css = style
+  Search.afterDOMLoaded = script;
+  Search.css = style;
 
-  return Search
-}) satisfies QuartzComponentConstructor
+  return Search;
+}) satisfies QuartzComponentConstructor;

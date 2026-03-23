@@ -1,4 +1,4 @@
-import { Translation } from "./definition"
+import { Translation } from "./definition";
 
 export default {
   propertyDefaults: {
@@ -104,4 +104,4 @@ export default {
             : `Rasta iš viso ${count} žymų.`,
     },
   },
-} as const satisfies Translation
+} as const satisfies Translation;

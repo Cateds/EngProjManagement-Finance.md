@@ -628,11 +628,7 @@ ol.overflow {
   }
 
   &.gradient-active {
-    mask-image: linear-gradient(
-      to bottom,
-      black calc(100% - 50px),
-      transparent 100%
-    );
+    mask-image: linear-gradient(to bottom, black calc(100% - 50px), transparent 100%);
   }
 }
 
