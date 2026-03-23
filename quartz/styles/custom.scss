@@ -100,8 +100,14 @@ button,
   }
 }
 
-.sidebar {
+.sidebar.left {
   border-right: 1px solid var(--lightgray);
+
+  @media all and (max-width: 800px) {
+    border-right: none;
+    border-bottom: 1px solid var(--lightgray);
+    padding-bottom: 1rem;
+  }
 }
 
 .recent-notes {

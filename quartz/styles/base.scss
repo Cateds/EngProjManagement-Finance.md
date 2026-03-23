@@ -233,14 +233,37 @@ a {
       grid-area: grid-sidebar-left;
       flex-direction: column;
       @media all and ($mobile) {
-        gap: 0;
-        align-items: center;
+        gap: 0.75rem;
+        align-items: flex-start;
         position: initial;
         display: flex;
         height: unset;
         flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
         padding: 0;
-        padding-top: 2rem;
+        padding-top: 1rem;
+
+        & > .page-title {
+          flex: 1 1 calc(100% - 3rem);
+          min-width: 0;
+
+          & > a {
+            display: block;
+            line-height: 1.15;
+            overflow-wrap: anywhere;
+          }
+        }
+
+        & > .spacer {
+          display: none;
+        }
+
+        & > .flex-component {
+          flex: 1 1 100%;
+          min-width: 0;
+          align-items: center;
+        }
       }
     }
 
@@ -605,7 +628,11 @@ ol.overflow {
   }
 
   &.gradient-active {
-    mask-image: linear-gradient(to bottom, black calc(100% - 50px), transparent 100%);
+    mask-image: linear-gradient(
+      to bottom,
+      black calc(100% - 50px),
+      transparent 100%
+    );
   }
 }
 
