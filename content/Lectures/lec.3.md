@@ -212,4 +212,33 @@ $$
   \mathrm{CV} = \mathrm{EV} - \mathrm{AC}
   $$
 
+#### 绩效指数
+
+- 进度绩效指数 (Schedule Performance Index, SPI)
+  - 挣值和计划值之间的比率
+  - 表明了项目合适落后于或者领先于其基线进度
+  - 预期是大于 1，也就是项目领先于计划
+
+  $$
+  \mathrm{SPI} = \frac{\mathrm{EV}}{\mathrm{PV}}
+  $$
+
+- 成本绩效指数 (Cost Performance Index, CPI)
+  - 挣值和实际成本之间的比率
+  - 表明了项目合适落后于或者领先于其基线成本
+  - 预期是大于 1，也就是项目在预算内
+
+  $$
+  \mathrm{CPI} = \frac{\mathrm{EV}}{\mathrm{AC}}
+  $$
+
+![[Pasted image 20260324195227.png]]
+
+> ![[Pasted image 20260324195337.png]]
+> ![[Pasted image 20260324195349.png]]
+
 ## 项目资源管理
+
+> [!NOTE]
+>
+> Work In Process @ 2026-3-24
