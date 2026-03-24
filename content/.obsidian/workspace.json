@@ -6,7 +6,7 @@
       {
         "id": "bb866e7b5c7e8a0c",
         "type": "tabs",
-        "dimension": 38.22314049586777,
+        "dimension": 34.710743801652896,
         "children": [
           {
             "id": "318f1af4570f0574",
@@ -14,31 +14,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lectures/lec.1.md",
+                "file": "Lectures/lec.2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "lec.1"
+              "title": "lec.2"
             }
           }
         ]
       },
       {
-        "id": "a7376535d7f4036f",
+        "id": "bbe281c6c3cbc115",
         "type": "tabs",
-        "dimension": 61.77685950413223,
+        "dimension": 65.28925619834712,
         "children": [
           {
-            "id": "1864142ac03bef21",
+            "id": "356f6754fb483c3d",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Ref/M&F Lec1 zh.pdf"
+                "file": "Ref/M&F Lec2 zh.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "M&F Lec1 zh"
+              "title": "M&F Lec2 zh"
             }
           }
         ]
@@ -115,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Lectures/lec.1.md",
+                "file": "Lectures/lec.2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +125,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "lec.1 的反向链接列表"
+              "title": "lec.2 的反向链接列表"
             }
           },
           {
@@ -134,12 +134,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Lectures/lec.1.md",
+                "file": "Lectures/lec.2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "lec.1 的出链列表"
+              "title": "lec.2 的出链列表"
             }
           },
           {
@@ -177,13 +177,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lectures/lec.1.md",
+                "file": "Lectures/lec.2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "lec.1 的大纲"
+              "title": "lec.2 的大纲"
             }
           }
         ]
@@ -206,11 +206,22 @@
   },
   "active": "318f1af4570f0574",
   "lastOpenFiles": [
-    "Pasted image 20260323160115.png",
-    "Ref/M&F Lec1 zh.pdf",
+    "Pasted image 20260324162941.png",
+    "Pasted image 20260324162416.png",
+    "Pasted image 20260324162154.png",
+    "Pasted image 20260324161152.png",
+    "Pasted image 20260324160747.png",
+    "Lectures/lec.2.assets/image.png",
+    "Lectures/lec.2.assets",
+    "Pasted image 20260324160712.png",
+    "Pasted image 20260323180013.png",
+    "Pasted image 20260323175845.png",
+    "Pasted image 20260323175826.png",
+    "Pasted image 20260323175217.png",
+    "Ref/M&F Lec2 zh.pdf",
+    "Lectures/lec.2.md",
     "Lectures/lec.1.md",
-    "Pasted image 20260323154211.png",
-    "Pasted image 20260323154031.png",
+    "Ref/M&F Lec1 zh.pdf",
     "Lectures/lec.4.md",
     "Ref",
     "index.md"
