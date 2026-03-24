@@ -12,12 +12,14 @@
             "id": "318f1af4570f0574",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Assets/Pasted image 20260324162941.png"
+                "file": "Lectures/lec.3.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260324162941"
+              "icon": "lucide-file",
+              "title": "lec.3"
             }
           }
         ]
@@ -96,7 +98,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "b4a998b4afbeed8a",
@@ -112,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Assets/Pasted image 20260324162941.png",
+                "file": "Lectures/lec.3.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +125,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Pasted image 20260324162941 的反向链接列表"
+              "title": "lec.3 的反向链接列表"
             }
           },
           {
@@ -131,12 +134,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Assets/Pasted image 20260324162941.png",
+                "file": "Lectures/lec.3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Pasted image 20260324162941 的出链列表"
+              "title": "lec.3 的出链列表"
             }
           },
           {
@@ -174,13 +177,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Assets/Pasted image 20260324162941.png",
+                "file": "Lectures/lec.3.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Pasted image 20260324162941 的大纲"
+              "title": "lec.3 的大纲"
             }
           }
         ]
@@ -201,22 +204,24 @@
       "bases:新建数据库": false
     }
   },
-  "active": "1e9233e9664880ee",
+  "active": "318f1af4570f0574",
   "lastOpenFiles": [
+    "Assets/Pasted image 20260324182102.png",
+    "Assets/Pasted image 20260324180851.png",
+    "Assets/Pasted image 20260324174103.png",
+    "Assets/Pasted image 20260324171626.png",
+    "Assets/Pasted image 20260324162941.png",
+    "Lectures/lec.3.assets/image.png",
+    "Lectures/lec.3.assets",
+    "Ref/M&F Lec3 zh.pdf",
     "Assets/Pasted image 20260324161152.png",
     "Assets/Pasted image 20260323154031.png",
     "index.md",
     "Lectures/lec.2.md",
-    "Assets/Pasted image 20260324162941.png",
     "Assets/Pasted image 20260324162416.png",
     "Assets/Pasted image 20260324162154.png",
     "Assets/Pasted image 20260324160747.png",
-    "Lectures/lec.2.assets/image.png",
     "Lectures/lec.2.assets",
-    "Assets/Pasted image 20260324160712.png",
-    "Assets/Pasted image 20260323180013.png",
-    "Assets/Pasted image 20260323175845.png",
-    "Assets/Pasted image 20260323175826.png",
     "Ref/M&F Lec2 zh.pdf",
     "Lectures/lec.1.md",
     "Ref/M&F Lec1 zh.pdf",
