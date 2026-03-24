@@ -1,6 +1,6 @@
-# Engineering Project Management & Finance (EPM&F) Lecture Notes @ 2025-2026 Sprint
+# Engineering Project Management & Finance (EPM&F) Lecture Notes @ 2025-2026 Spring
 
-> Lecture notes for Engineering Project Management & Finance (EPM&F) course @ 2025-2026 Sprint, Glasgow College, UESTC.
+> Lecture notes for Engineering Project Management & Finance (EPM&F) course @ 2025-2026 Spring, Glasgow College, UESTC.
 
 **在线阅读 (GitHub Pages):** [https://cateds.github.io/EngProjManagement-Finance.md/](https://cateds.github.io/EngProjManagement-Finance.md/)
 
