@@ -1,5 +1,10 @@
 import micromorph from "micromorph";
-import { FullSlug, RelativeURL, getFullSlug, normalizeRelativeURLs } from "../../util/path";
+import {
+  FullSlug,
+  RelativeURL,
+  getFullSlug,
+  normalizeRelativeURLs,
+} from "../../util/path";
 import { fetchCanonical } from "./util";
 
 // adapted from `micromorph`
@@ -24,7 +29,9 @@ const isSamePage = (url: URL): boolean => {
   return sameOrigin && samePath;
 };
 
-const getOpts = ({ target }: Event): { url: URL; scroll?: boolean } | undefined => {
+const getOpts = ({
+  target,
+}: Event): { url: URL; scroll?: boolean } | undefined => {
   if (!isElement(target)) return;
   if (target.attributes.getNamedItem("target")?.value === "_blank") return;
   const a = target.closest("a");
@@ -32,11 +39,16 @@ const getOpts = ({ target }: Event): { url: URL; scroll?: boolean } | undefined 
   if ("routerIgnore" in a.dataset) return;
   const { href } = a;
   if (!isLocalUrl(href)) return;
-  return { url: new URL(href), scroll: "routerNoscroll" in a.dataset ? false : undefined };
+  return {
+    url: new URL(href),
+    scroll: "routerNoscroll" in a.dataset ? false : undefined,
+  };
 };
 
 function notifyNav(url: FullSlug) {
-  const event: CustomEventMap["nav"] = new CustomEvent("nav", { detail: { url } });
+  const event: CustomEventMap["nav"] = new CustomEvent("nav", {
+    detail: { url },
+  });
   document.dispatchEvent(event);
 }
 
@@ -78,7 +90,9 @@ async function _navigate(url: URL, isBack: boolean = false) {
   if (!contents) return;
 
   // notify about to nav
-  const event: CustomEventMap["prenav"] = new CustomEvent("prenav", { detail: {} });
+  const event: CustomEventMap["prenav"] = new CustomEvent("prenav", {
+    detail: {},
+  });
   document.dispatchEvent(event);
 
   // cleanup old
@@ -101,33 +115,40 @@ async function _navigate(url: URL, isBack: boolean = false) {
   announcer.dataset.persist = "";
   html.body.appendChild(announcer);
 
-  // morph body
-  await micromorph(document.body, html.body);
+  const updateDOM = async () => {
+    await micromorph(document.body, html.body);
 
-  // scroll into place and add history
-  if (!isBack) {
-    if (url.hash) {
-      const el = document.getElementById(decodeURIComponent(url.hash.substring(1)));
-      el?.scrollIntoView();
-    } else {
-      window.scrollTo({ top: 0 });
+    if (!isBack) {
+      if (url.hash) {
+        const el = document.getElementById(
+          decodeURIComponent(url.hash.substring(1)),
+        );
+        el?.scrollIntoView();
+      } else {
+        window.scrollTo({ top: 0 });
+      }
     }
+
+    const elementsToRemove = document.head.querySelectorAll(
+      ":not([data-persist])",
+    );
+    elementsToRemove.forEach((el) => el.remove());
+    const elementsToAdd = html.head.querySelectorAll(":not([data-persist])");
+    elementsToAdd.forEach((el) => document.head.appendChild(el));
+
+    if (!isBack) {
+      history.pushState({}, "", url);
+    }
+
+    notifyNav(getFullSlug(window));
+    delete announcer.dataset.persist;
+  };
+
+  if (document.startViewTransition) {
+    await document.startViewTransition(updateDOM).finished;
+  } else {
+    await updateDOM();
   }
-
-  // now, patch head, re-executing scripts
-  const elementsToRemove = document.head.querySelectorAll(":not([data-persist])");
-  elementsToRemove.forEach((el) => el.remove());
-  const elementsToAdd = html.head.querySelectorAll(":not([data-persist])");
-  elementsToAdd.forEach((el) => document.head.appendChild(el));
-
-  // delay setting the url until now
-  // at this point everything is loaded so changing the url should resolve to the correct addresses
-  if (!isBack) {
-    history.pushState({}, "", url);
-  }
-
-  notifyNav(getFullSlug(window));
-  delete announcer.dataset.persist;
 }
 
 async function navigate(url: URL, isBack: boolean = false) {
@@ -154,7 +175,9 @@ function createRouter() {
       event.preventDefault();
 
       if (isSamePage(url) && url.hash) {
-        const el = document.getElementById(decodeURIComponent(url.hash.substring(1)));
+        const el = document.getElementById(
+          decodeURIComponent(url.hash.substring(1)),
+        );
         el?.scrollIntoView();
         history.pushState({}, "", url);
         return;
@@ -165,7 +188,8 @@ function createRouter() {
 
     window.addEventListener("popstate", (event) => {
       const { url } = getOpts(event) ?? {};
-      if (window.location.hash && window.location.pathname === url?.pathname) return;
+      if (window.location.hash && window.location.pathname === url?.pathname)
+        return;
       navigate(new URL(window.location.toString()), true);
       return;
     });

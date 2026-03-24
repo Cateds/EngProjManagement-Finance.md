@@ -154,3 +154,34 @@ button,
 footer {
   border-top: 1px solid var(--lightgray);
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.18s;
+}
+
+::view-transition-old(root) {
+  animation-name: spa-fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: spa-fade-in;
+}
+
+@keyframes spa-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes spa-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
