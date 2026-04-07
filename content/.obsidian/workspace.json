@@ -14,15 +14,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lectures/lec.3.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "lec.3"
+              "title": "index"
+            }
+          },
+          {
+            "id": "c311bc8a69a669bb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lectures/lec.5.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "lec.5"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "bbe281c6c3cbc115",
@@ -204,25 +219,32 @@
       "bases:新建数据库": false
     }
   },
-  "active": "318f1af4570f0574",
+  "active": "c311bc8a69a669bb",
   "lastOpenFiles": [
-    "Assets/Pasted image 20260324195349.png",
-    "Assets/Pasted image 20260324195337.png",
-    "Assets/Pasted image 20260324195227.png",
-    "Assets/Pasted image 20260324182102.png",
-    "Assets/Pasted image 20260324180851.png",
-    "Assets/Pasted image 20260324174103.png",
-    "Assets/Pasted image 20260324171626.png",
-    "Assets/Pasted image 20260324162941.png",
-    "Lectures/lec.3.assets/image.png",
+    "Assets/Pasted image 20260407234242.png",
+    "Assets/Pasted image 20260407220439.png",
+    "Assets/Pasted image 20260407214452.png",
+    "Assets/Pasted image 20260407214040.png",
+    "Assets/Pasted image 20260407172713.png",
+    "Assets/Pasted image 20260407170332.png",
+    "Assets/Pasted image 20260407165219.png",
+    "index.md",
+    "Ref/M&F Lec.5 zh-cn.pdf",
+    "Ref/Lecture 5 -- Design For Manufacturing_Part 1.pdf",
+    "Lectures/lec.8.md",
+    "Lectures/lec.7.md",
+    "Lectures/lec.6.md",
+    "Lectures/index.md",
+    "Lectures/lec.3.md",
+    "Assets/Pasted image 20260401154601.png",
+    "Assets/Pasted image 20260401154255.png",
+    "Assets/Pasted image 20260401154245.png",
+    "Ref/M&F Lec2 zh.pdf",
+    "Assets/Pasted image 20260324221017.png",
     "Lectures/lec.3.assets",
     "Ref/M&F Lec3 zh.pdf",
-    "Assets/Pasted image 20260324161152.png",
-    "Assets/Pasted image 20260323154031.png",
-    "index.md",
     "Lectures/lec.2.md",
     "Lectures/lec.2.assets",
-    "Ref/M&F Lec2 zh.pdf",
     "Lectures/lec.1.md",
     "Ref/M&F Lec1 zh.pdf",
     "Lectures/lec.4.md",

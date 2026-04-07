@@ -3,7 +3,12 @@ import { QuartzComponent, QuartzComponentProps } from "./types";
 import HeaderConstructor from "./Header";
 import BodyConstructor from "./Body";
 import { JSResourceToScriptElement, StaticResources } from "../util/resources";
-import { FullSlug, RelativeURL, joinSegments, normalizeHastElement } from "../util/path";
+import {
+  FullSlug,
+  RelativeURL,
+  joinSegments,
+  normalizeHastElement,
+} from "../util/path";
 import { clone } from "../util/clone";
 import { visit } from "unist-util-visit";
 import { Root, Element, ElementContent } from "hast";
@@ -77,7 +82,8 @@ function renderTranscludes(
       const classNames = (node.properties?.className ?? []) as string[];
       if (classNames.includes("transclude")) {
         const inner = node.children[0] as Element;
-        const transcludeTarget = (inner.properties["data-slug"] ?? slug) as FullSlug;
+        const transcludeTarget = (inner.properties["data-slug"] ??
+          slug) as FullSlug;
         if (visited.has(transcludeTarget)) {
           console.warn(
             styleText(
@@ -102,7 +108,9 @@ function renderTranscludes(
         }
         visited.add(transcludeTarget);
 
-        const page = componentData.allFiles.find((f) => f.slug === transcludeTarget);
+        const page = componentData.allFiles.find(
+          (f) => f.slug === transcludeTarget,
+        );
         if (!page) {
           return;
         }
@@ -127,9 +135,16 @@ function renderTranscludes(
               {
                 type: "element",
                 tagName: "a",
-                properties: { href: inner.properties?.href, class: ["internal", "transclude-src"] },
+                properties: {
+                  href: inner.properties?.href,
+                  class: ["internal", "transclude-src"],
+                },
                 children: [
-                  { type: "text", value: i18n(cfg.locale).components.transcludes.linkToOriginal },
+                  {
+                    type: "text",
+                    value: i18n(cfg.locale).components.transcludes
+                      .linkToOriginal,
+                  },
                 ],
               },
             ];
@@ -142,7 +157,8 @@ function renderTranscludes(
           let endIdx = undefined;
           for (const [i, el] of page.htmlAst.children.entries()) {
             // skip non-headers
-            if (!(el.type === "element" && el.tagName.match(headerRegex))) continue;
+            if (!(el.type === "element" && el.tagName.match(headerRegex)))
+              continue;
             const depth = Number(el.tagName.substring(1));
 
             // lookin for our blockref
@@ -164,15 +180,23 @@ function renderTranscludes(
           }
 
           node.children = [
-            ...(page.htmlAst.children.slice(startIdx, endIdx) as ElementContent[]).map((child) =>
+            ...(
+              page.htmlAst.children.slice(startIdx, endIdx) as ElementContent[]
+            ).map((child) =>
               normalizeHastElement(child as Element, slug, transcludeTarget),
             ),
             {
               type: "element",
               tagName: "a",
-              properties: { href: inner.properties?.href, class: ["internal", "transclude-src"] },
+              properties: {
+                href: inner.properties?.href,
+                class: ["internal", "transclude-src"],
+              },
               children: [
-                { type: "text", value: i18n(cfg.locale).components.transcludes.linkToOriginal },
+                {
+                  type: "text",
+                  value: i18n(cfg.locale).components.transcludes.linkToOriginal,
+                },
               ],
             },
           ];
@@ -200,9 +224,15 @@ function renderTranscludes(
             {
               type: "element",
               tagName: "a",
-              properties: { href: inner.properties?.href, class: ["internal", "transclude-src"] },
+              properties: {
+                href: inner.properties?.href,
+                class: ["internal", "transclude-src"],
+              },
               children: [
-                { type: "text", value: i18n(cfg.locale).components.transcludes.linkToOriginal },
+                {
+                  type: "text",
+                  value: i18n(cfg.locale).components.transcludes.linkToOriginal,
+                },
               ],
             },
           ];
@@ -257,7 +287,10 @@ export function renderPage(
     </div>
   );
 
-  const lang = componentData.fileData.frontmatter?.lang ?? cfg.locale?.split("-")[0] ?? "en";
+  const lang =
+    componentData.fileData.frontmatter?.lang ??
+    cfg.locale?.split("-")[0] ??
+    "en";
   const direction = i18n(cfg.locale).direction ?? "ltr";
   const doc = (
     <html lang={lang} dir={direction}>
@@ -280,7 +313,6 @@ export function renderPage(
                 </div>
               </div>
               <Content {...componentData} />
-              <hr />
               <div class="page-footer">
                 {afterBody.map((BodyComponent) => (
                   <BodyComponent {...componentData} />

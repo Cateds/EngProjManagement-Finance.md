@@ -20,6 +20,22 @@ type FolderState = {
 };
 
 let currentExplorerState: Array<FolderState>;
+
+function buildExplorerOrder(data: Record<string, ContentDetails>) {
+  const order = new Map<string, number>();
+  const home = data.index;
+
+  if (!home) {
+    return order;
+  }
+
+  home.links.forEach((link, index) => {
+    order.set(link, index);
+  });
+
+  return order;
+}
+
 function toggleExplorer(this: HTMLElement) {
   const nearestExplorer = this.closest(".explorer") as HTMLElement;
   if (!nearestExplorer) return;
@@ -54,7 +70,8 @@ function toggleFolder(evt: MouseEvent) {
         target.parentElement?.parentElement
   ) as MaybeHTMLElement;
   if (!folderContainer) return;
-  const childFolderContainer = folderContainer.nextElementSibling as MaybeHTMLElement;
+  const childFolderContainer =
+    folderContainer.nextElementSibling as MaybeHTMLElement;
   if (!childFolderContainer) return;
 
   childFolderContainer.classList.toggle("open");
@@ -79,8 +96,13 @@ function toggleFolder(evt: MouseEvent) {
   localStorage.setItem("fileTree", stringifiedFileTree);
 }
 
-function createFileNode(currentSlug: FullSlug, node: FileTrieNode): HTMLLIElement {
-  const template = document.getElementById("template-file") as HTMLTemplateElement;
+function createFileNode(
+  currentSlug: FullSlug,
+  node: FileTrieNode,
+): HTMLLIElement {
+  const template = document.getElementById(
+    "template-file",
+  ) as HTMLTemplateElement;
   const clone = template.content.cloneNode(true) as DocumentFragment;
   const li = clone.querySelector("li") as HTMLLIElement;
   const a = li.querySelector("a") as HTMLAnchorElement;
@@ -100,7 +122,9 @@ function createFolderNode(
   node: FileTrieNode,
   opts: ParsedOptions,
 ): HTMLLIElement {
-  const template = document.getElementById("template-folder") as HTMLTemplateElement;
+  const template = document.getElementById(
+    "template-folder",
+  ) as HTMLTemplateElement;
   const clone = template.content.cloneNode(true) as DocumentFragment;
   const li = clone.querySelector("li") as HTMLLIElement;
   const folderContainer = li.querySelector(".folder-container") as HTMLElement;
@@ -117,7 +141,9 @@ function createFolderNode(
 
   if (opts.folderClickBehavior === "link") {
     // Replace button with link for link behavior
-    const button = titleContainer.querySelector(".folder-button") as HTMLElement;
+    const button = titleContainer.querySelector(
+      ".folder-button",
+    ) as HTMLElement;
     const a = document.createElement("a");
     a.href = resolveRelative(currentSlug, folderPath);
     a.dataset.for = folderPath;
@@ -155,13 +181,19 @@ function createFolderNode(
 }
 
 async function setupExplorer(currentSlug: FullSlug) {
-  const allExplorers = document.querySelectorAll("div.explorer") as NodeListOf<HTMLElement>;
+  const allExplorers = document.querySelectorAll(
+    "div.explorer",
+  ) as NodeListOf<HTMLElement>;
 
   for (const explorer of allExplorers) {
     const dataFns = JSON.parse(explorer.dataset.dataFns || "{}");
     const opts: ParsedOptions = {
-      folderClickBehavior: (explorer.dataset.behavior || "collapse") as "collapse" | "link",
-      folderDefaultState: (explorer.dataset.collapsed || "collapsed") as "collapsed" | "open",
+      folderClickBehavior: (explorer.dataset.behavior || "collapse") as
+        | "collapse"
+        | "link",
+      folderDefaultState: (explorer.dataset.collapsed || "collapsed") as
+        | "collapsed"
+        | "open",
       useSavedState: explorer.dataset.savestate === "true",
       order: dataFns.order || ["filter", "map", "sort"],
       sortFn: new Function("return " + (dataFns.sortFn || "undefined"))(),
@@ -174,12 +206,34 @@ async function setupExplorer(currentSlug: FullSlug) {
     const serializedExplorerState =
       storageTree && opts.useSavedState ? JSON.parse(storageTree) : [];
     const oldIndex = new Map<string, boolean>(
-      serializedExplorerState.map((entry: FolderState) => [entry.path, entry.collapsed]),
+      serializedExplorerState.map((entry: FolderState) => [
+        entry.path,
+        entry.collapsed,
+      ]),
     );
 
     const data = await fetchData;
     const entries = [...Object.entries(data)] as [FullSlug, ContentDetails][];
     const trie = FileTrieNode.fromEntries(entries);
+    const order = buildExplorerOrder(data);
+    const orderCache = new WeakMap<FileTrieNode, number>();
+
+    const nodeOrder = (node: FileTrieNode): number => {
+      const cached = orderCache.get(node);
+      if (cached !== undefined) {
+        return cached;
+      }
+
+      const directOrder = order.get(simplifySlug(node.slug));
+      let bestOrder = directOrder ?? Number.POSITIVE_INFINITY;
+
+      for (const child of node.children) {
+        bestOrder = Math.min(bestOrder, nodeOrder(child));
+      }
+
+      orderCache.set(node, bestOrder);
+      return bestOrder;
+    };
 
     // Apply functions in order
     for (const fn of opts.order) {
@@ -191,7 +245,25 @@ async function setupExplorer(currentSlug: FullSlug) {
           if (opts.mapFn) trie.map(opts.mapFn);
           break;
         case "sort":
-          if (opts.sortFn) trie.sort(opts.sortFn);
+          if (opts.sortFn) {
+            trie.sort((a, b) => {
+              const aOrder = nodeOrder(a);
+              const bOrder = nodeOrder(b);
+
+              const aOrdered = Number.isFinite(aOrder);
+              const bOrdered = Number.isFinite(bOrder);
+
+              if (aOrdered && bOrdered && aOrder !== bOrder) {
+                return aOrder - bOrder;
+              }
+
+              if (aOrdered !== bOrdered) {
+                return aOrdered ? -1 : 1;
+              }
+
+              return opts.sortFn(a, b);
+            });
+          }
           break;
       }
     }
@@ -203,7 +275,9 @@ async function setupExplorer(currentSlug: FullSlug) {
       return {
         path,
         collapsed:
-          previousState === undefined ? opts.folderDefaultState === "collapsed" : previousState,
+          previousState === undefined
+            ? opts.folderDefaultState === "collapsed"
+            : previousState,
       };
     });
 
@@ -239,7 +313,9 @@ async function setupExplorer(currentSlug: FullSlug) {
     ) as HTMLCollectionOf<HTMLElement>;
     for (const button of explorerButtons) {
       button.addEventListener("click", toggleExplorer);
-      window.addCleanup(() => button.removeEventListener("click", toggleExplorer));
+      window.addCleanup(() =>
+        button.removeEventListener("click", toggleExplorer),
+      );
     }
 
     // Set up folder click handlers
@@ -249,7 +325,9 @@ async function setupExplorer(currentSlug: FullSlug) {
       ) as HTMLCollectionOf<HTMLElement>;
       for (const button of folderButtons) {
         button.addEventListener("click", toggleFolder);
-        window.addCleanup(() => button.removeEventListener("click", toggleFolder));
+        window.addCleanup(() =>
+          button.removeEventListener("click", toggleFolder),
+        );
       }
     }
 
@@ -302,5 +380,7 @@ window.addEventListener("resize", function () {
 });
 
 function setFolderState(folderElement: HTMLElement, collapsed: boolean) {
-  return collapsed ? folderElement.classList.remove("open") : folderElement.classList.add("open");
+  return collapsed
+    ? folderElement.classList.remove("open")
+    : folderElement.classList.add("open");
 }
