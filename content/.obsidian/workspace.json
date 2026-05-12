@@ -4,36 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "bb866e7b5c7e8a0c",
+        "id": "b2412737effdf304",
         "type": "tabs",
         "children": [
           {
-            "id": "318f1af4570f0574",
+            "id": "c22970a904abbe63",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lectures/lec.6.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "lec.6"
+              "title": "index"
             }
           },
           {
-            "id": "c311bc8a69a669bb",
+            "id": "a5a3dd74723cb668",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Ref/M&F Lec.6 zh-cn.pdf"
+                "file": "Lectures2/lec.9.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "M&F Lec.6 zh-cn"
+              "icon": "lucide-file",
+              "title": "lec.9"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -90,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "b4a998b4afbeed8a",
@@ -196,37 +198,40 @@
       "bases:新建数据库": false
     }
   },
-  "active": "318f1af4570f0574",
+  "active": "a5a3dd74723cb668",
   "lastOpenFiles": [
-    "Assets/Pasted image 20260408173145.png",
+    "Assets/Pasted image 20260512175500.png",
+    "Assets/Pasted image 20260512175232.png",
+    "Assets/Pasted image 20260512175158.png",
+    "Lectures2/lec.9.assets/image.png",
+    "Lectures2/lec.9.assets",
+    "Assets/Pasted image 20260512170747.png",
+    "Assets/Pasted image 20260512170252.png",
+    "Assets/Pasted image 20260512170110.png",
+    "Ref/M&F Lec.9 zh-cn.pdf",
+    "Ref/M&F Lec.10 zh-cn.pdf",
+    "index.md",
+    "Lectures/lec.8.md",
+    "Lectures2/lec.9.md",
+    "Lectures/lec.1.md",
+    "Lectures2/index.md",
+    "Lectures/index.md",
+    "Lectures2",
+    "Ref/M&F Lec.7 zh-cn.pdf",
+    "Lectures/lec.7.md",
+    "Assets/Pasted image 20260409174233.png",
+    "Assets/Pasted image 20260409174221.png",
+    "Assets/Pasted image 20260409172415.png",
+    "Assets/Pasted image 20260409172251.png",
     "Ref/M&F Lec.6 zh-cn.pdf",
     "Lectures/lec.6.md",
-    "Assets/Pasted image 20260408172931.png",
-    "Assets/Pasted image 20260408172039.png",
-    "Assets/Pasted image 20260408171838.png",
-    "Assets/Pasted image 20260408171038.png",
-    "Assets/Pasted image 20260408170937.png",
-    "Assets/Pasted image 20260408170158.png",
-    "Assets/Pasted image 20260408165933.png",
-    "Assets/Pasted image 20260408165645.png",
-    "Assets/Pasted image 20260408165436.png",
-    "index.md",
     "Lectures/lec.5.md",
     "Ref/M&F Lec2 zh.pdf",
-    "Assets/Pasted image 20260407234242.png",
     "Ref/M&F Lec.5 zh-cn.pdf",
     "Ref/Lecture 5 -- Design For Manufacturing_Part 1.pdf",
-    "Lectures/lec.8.md",
-    "Lectures/lec.7.md",
-    "Lectures/index.md",
     "Lectures/lec.3.md",
     "Lectures/lec.3.assets",
-    "Ref/M&F Lec3 zh.pdf",
     "Lectures/lec.2.md",
-    "Lectures/lec.2.assets",
-    "Lectures/lec.1.md",
-    "Ref/M&F Lec1 zh.pdf",
-    "Lectures/lec.4.md",
-    "Ref"
+    "Lectures/lec.4.md"
   ]
 }
