@@ -23,7 +23,7 @@ title: 工程经济学 - I
 对于一个备选方案，需要评估一系列的变量，包括
 
 - 初始成本 (Initial Cost)；回报率/利率 (Rate of Return/Interest Rate)
-- 预期寿命/经济寿命 (Anticipated Life of Equipment/Ecomonic Life)
+- 预期寿命/经济寿命 (Anticipated Life of Equipment/Economic Life)
 - 年度维护成本或收益 (Annual Maintenance Costs or Benefits)
 - 报废时转手或残值 (End-of-life resale or salvage value)
 
@@ -31,11 +31,11 @@ title: 工程经济学 - I
 
 多种财务报告都主要关注 **提前规划 (Planning Ahead)**。具体来说，是包括现金流预测 (cashflow forecasting) ，盈亏平衡分析 (breakeven analysis) ，预算设定 (budget setting) 等等。
 
-其他的报告主要关注与年终 **结果汇报 (Reporting Results)**，包括损益表 (Profilt and Loss, P&L) 和资产负债表 (Balance Sheet)。
+其他的报告主要关注与年终 **结果汇报 (Reporting Results)**，包括损益表 (Profit and Loss, P&L) 和资产负债表 (Balance Sheet)。
 
 ---
 
-如果拥有一家公司，你**必须**每年向政府报告公司的状况，包括必要的法定信息，用于计算公司应该缴纳的税款。虚假陈述公司财务状况是违法切欺诈的行为
+如果拥有一家公司，你**必须**每年向政府报告公司的状况，包括必要的法定信息，用于计算公司应该缴纳的税款。虚假陈述公司财务状况是违法且欺诈的行为
 
 因此，为了运营一家成功的公司 ~~（什么，我吗）~~ ，你需要了解公司内部的财务状况。通常一个月整理准备一次
 
@@ -190,7 +190,7 @@ EBITDA 是 Earnings Before Interest, Taxes, Depreciation, and Amortization 的�
 
 ##### Interest (利息)
 
-许多公司会借款来为运营活着扩展计划融资，因此公司需要支付所接资金的利息。有时公司有过剩现金时，这个值为负数——也就是公司在赚取利息
+许多公司会借款来为运营或者扩展计划融资，因此公司需要支付所接资金的利息。有时公司有过剩现金时，这个值为负数——也就是公司在赚取利息
 
 通常利息对损益表对影响很小，尤其是对工程部门。这部分交给财务部门处理
 
