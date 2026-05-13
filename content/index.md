@@ -24,3 +24,4 @@ GitHub 仓库链接在 [EngProjManagement-Finance.md](https://github.com/Cateds/
   - [[lec.8|Lecture.8 6-Sigma 与过程能力]]
 - **3. 工程经济学**
   - [[lec.9|Lecture.9 工程经济学导论]]
+  - [[lec.10|Lecture.10 自制与外购决策]]
