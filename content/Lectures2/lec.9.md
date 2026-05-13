@@ -2,6 +2,10 @@
 title: 工程经济学导论
 ---
 
+> **_Introducton to Engineering Economics_**
+>
+> Lecture @ 2026-5-12
+
 ## 什么是工程经济学
 
 工程经济学 (Engineering Economics) 是一套准数学技术 (quasi-mathematical techniques) 的集合，用来简化经济比较的过程。它提供了一种理性并且系统化的方法，用于评估不同的经济决策，比如
