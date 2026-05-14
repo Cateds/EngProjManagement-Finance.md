@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "Lectures2/lec.11.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "lec.11"
             }
           }
         ]
@@ -185,23 +185,26 @@
   },
   "active": "c22970a904abbe63",
   "lastOpenFiles": [
-    "Lectures2/lec.10.md",
+    "Assets/Pasted image 20260514173447.png",
+    "Assets/Pasted image 20260514171954.png",
+    "Assets/Pasted image 20260514171516.png",
+    "Assets/Pasted image 20260514171431.png",
+    "Assets/Pasted image 20260514171306.png",
+    "Assets/Pasted image 20260514170221.png",
+    "Assets/Pasted image 20260514165915.png",
+    "Assets/Pasted image 20260514165905.png",
+    "Assets/Pasted image 20260514165005.png",
     "Lectures2/lec.9.md",
+    "Lectures2/lec.10.md",
+    "Lectures2/lec.11.md",
+    "index.md",
+    "Ref/M&F Lec.11 zh-cn.pdf",
     "Lectures2/index.md",
     "Assets/Pasted image 20260513171726.png",
     "Assets/Pasted image 20260513171114.png",
-    "Assets/Pasted image 20260513170912.png",
-    "Assets/Pasted image 20260513170543.png",
-    "Assets/Pasted image 20260513165012.png",
-    "Assets/Pasted image 20260512175500.png",
-    "Assets/Pasted image 20260512175232.png",
-    "Assets/Pasted image 20260512175158.png",
-    "Lectures2/lec.9.assets/image.png",
     "Lectures2/lec.9.assets",
-    "Assets/Pasted image 20260512170747.png",
     "Ref/M&F Lec.9 zh-cn.pdf",
     "Ref/M&F Lec.10 zh-cn.pdf",
-    "index.md",
     "Lectures/lec.8.md",
     "Lectures/lec.1.md",
     "Lectures/index.md",
@@ -215,7 +218,6 @@
     "Ref/M&F Lec.5 zh-cn.pdf",
     "Ref/Lecture 5 -- Design For Manufacturing_Part 1.pdf",
     "Lectures/lec.3.md",
-    "Lectures/lec.3.assets",
     "Lectures/lec.2.md",
     "Lectures/lec.4.md"
   ]

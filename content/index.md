@@ -25,3 +25,4 @@ GitHub 仓库链接在 [EngProjManagement-Finance.md](https://github.com/Cateds/
 - **3. 工程经济学**
   - [[lec.9|Lecture.9 工程经济学导论]]
   - [[lec.10|Lecture.10 自制与外购决策]]
+  - [[lec.11|Lecture.11 盈亏平衡分析]]

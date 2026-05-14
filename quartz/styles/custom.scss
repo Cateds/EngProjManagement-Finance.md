@@ -6,6 +6,8 @@
   --radius-lg: 22px;
   --transition-fast: 0.18s ease;
   --transition-normal: 0.28s ease;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 #quartz-body {
@@ -186,4 +188,75 @@ footer {
   to {
     opacity: 1;
   }
+}
+
+// ── Details / Summary 抽屉风格 ──
+details {
+  border: 1px solid var(--lightgray);
+  border-radius: var(--radius-md);
+  margin: 1.25em 0;
+  background: var(--light);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast);
+
+  &[open] {
+    box-shadow: var(--shadow-md);
+  }
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95em;
+  color: var(--dark);
+  padding: 0.65em 1em 0.65em 2.2em;
+  border-radius: var(--radius-md);
+  border-bottom: 1px solid transparent;
+  transition: background var(--transition-fast),
+              border-color var(--transition-fast);
+  user-select: none;
+  position: relative;
+
+  &::marker {
+    display: none;
+    content: "";
+  }
+
+  &::before {
+    content: "▶";
+    position: absolute;
+    left: 0.75em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7em;
+    color: var(--gray);
+    transition: color var(--transition-fast),
+                transform var(--transition-fast);
+    line-height: 1;
+  }
+
+  &:hover {
+    background: var(--highlight);
+    &::before { color: var(--secondary); }
+  }
+}
+
+details[open] > summary {
+  border-bottom-color: var(--lightgray);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+
+  &::before {
+    transform: translateY(-50%) rotate(90deg);
+  }
+}
+
+details[open] > :not(summary) {
+  padding: 0.75em 1em 1em;
+  color: var(--darkgray);
+  line-height: 1.6;
+}
+
+details details {
+  margin-left: 1em;
+  font-size: 0.95em;
 }
