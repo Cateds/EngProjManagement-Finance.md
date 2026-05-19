@@ -30,7 +30,22 @@ const explorerConfig = {
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.Comments({
+      provider: "giscus",
+      options: {
+        repo: "Cateds/EngProjManagement-Finance.md",
+        repoId: "R_kgDORor_Pw",
+        category: "Comments",
+        categoryId: "DIC_kwDORor_P84C9YDw",
+        mapping: "pathname",
+        strict: false,
+        reactionsEnabled: true,
+        inputPosition: "bottom",
+        lang: "zh-CN",
+      },
+    }),
+  ],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/jackyzha0/quartz",
