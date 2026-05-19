@@ -1,5 +1,6 @@
 {
   "newFileLocation": "folder",
   "attachmentFolderPath": "Assets",
-  "newFileFolderPath": "Assets"
+  "newFileFolderPath": "Assets",
+  "promptDelete": false
 }

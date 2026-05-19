@@ -12,18 +12,19 @@ GitHub 仓库链接在 [EngProjManagement-Finance.md](https://github.com/Cateds/
 
 ## 目录
 
-- **1. 项目管理**
+- **[[Lectures/index|1. 项目管理]]**
   - [[lec.1|Lecture.1 导论，项目经理的角色]]
   - [[lec.2|Lecture.2 项目范围管理，项目进度管理]]
   - [[lec.3|Lecture.3 项目成本管理，项目资源管理]]
   - [[lec.4|Lecture.4 项目沟通管理，项目风险管理]]
-- **2. 面向制造的设计**
+- **[[Lectures/index|2. 面向制造的设计]]**
   - [[lec.5|Lecture.5 引言与可持续设计]]
   - [[lec.6|Lecture.6 质量控制与质量成本]]
   - [[lec.7|Lecture.7 稳健制造设计]]
   - [[lec.8|Lecture.8 6-Sigma 与过程能力]]
-- **3. 工程经济学**
+- **[[Lectures2/index|3. 工程经济学]]**
   - [[lec.9|Lecture.9 工程经济学导论]]
   - [[lec.10|Lecture.10 自制与外购决策]]
   - [[lec.11|Lecture.11 盈亏平衡分析]]
   - [[lec.12|Lecture.12 外包，内包，正确外包]]
+  - [[lec.13|Lecture.13 资本支出、运营支出、总拥有成本 (TCO)]]
