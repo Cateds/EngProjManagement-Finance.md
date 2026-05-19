@@ -1,5 +1,5 @@
 ---
-title: 资本支出、运营支出、总拥有成本 (TCO)
+title: 资本、运营支出，总拥有成本
 ---
 
 > **_Capex, Opex, and Total Cost of Ownership (TCO)_**
