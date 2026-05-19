@@ -27,6 +27,6 @@ GitHub 仓库链接在 [EngProjManagement-Finance.md](https://github.com/Cateds/
   - [[lec.10|Lecture.10 自制与外购决策]]
   - [[lec.11|Lecture.11 盈亏平衡分析]]
   - [[lec.12|Lecture.12 外包，内包，正确外包]]
-  - [[lec.13|Lecture.13 资本支出、运营支出、总拥有成本 (TCO)]]
+  - [[lec.13|Lecture.13 资本、运营支出，总拥有成本]]
 - **[[Part4/index|4. 公司管理]]**
   - [[lec.14|Lecture.14 什么是公司？]]
