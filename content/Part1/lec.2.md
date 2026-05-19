@@ -1,6 +1,5 @@
 ---
-title: 项目管理 - II
-description: 项目范围管理和项目进度管理
+title: 项目范围管理，项目进度管理
 ---
 
 > [!NOTE]

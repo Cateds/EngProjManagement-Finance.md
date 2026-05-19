@@ -1,5 +1,5 @@
 ---
-title: 面向制造的设计 - IV
+title: 6-Sigma 与过程能力
 ---
 
 > [!NOTE]
