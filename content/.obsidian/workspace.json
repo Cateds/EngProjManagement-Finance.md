@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "index"
             }
-          },
-          {
-            "id": "0840e2a544caeec8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "index.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "index"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -198,11 +183,19 @@
       "bases:新建数据库": false
     }
   },
-  "active": "0840e2a544caeec8",
+  "active": "c22970a904abbe63",
   "lastOpenFiles": [
+    "Part3/lec.13.md",
+    "Assets/Pasted image 20260519172951.png",
+    "Assets/Pasted image 20260519172743.png",
+    "Assets/Pasted image 20260519172718.png",
+    "Assets/Pasted image 20260519172659.png",
+    "Part3/lec.13.assets/image.png",
+    "Part3/lec.13.assets",
+    "Assets/Pasted image 20260519165756.png",
+    "index.md",
     "Lectures/index.md",
     "Lectures",
-    "index.md",
     "Part2/index.md",
     "Part2/lec.8.md",
     "Part2/lec.7.md",
@@ -220,7 +213,6 @@
     "Part1",
     "Lectures2/lec.13.md",
     "Part3/lec.9.md",
-    "Part3/lec.13.md",
     "Part3/lec.12.md",
     "Part3/lec.11.md",
     "Part3/lec.10.md",
@@ -231,20 +223,12 @@
     "Assets/Pasted image 20260519163331.png",
     "Lectures2/lec.10.md",
     "Lectures2/lec.9.md",
-    "Lectures2/lec.12.md",
     "Assets/Pasted image 20260519162512.png",
     "Assets/Pasted image 20260519162441.png",
     "Ref/M&F Lec.13 zh-cn.pdf",
     "Ref/M&F Lec.14 zh-cn.pdf",
     "Ref/M&F Lec.15 zh-cn.pdf",
     "Ref/M&F Lec.16 zh-cn.pdf",
-    "Assets/Pasted image 20260516233505.png",
-    "Assets/Pasted image 20260516232647.png",
-    "Assets/Pasted image 20260515184124.png",
-    "Assets/Pasted image 20260515183912.png",
-    "Assets/Pasted image 20260515183257.png",
-    "Assets/Pasted image 20260515173131.png",
-    "Ref/M&F Lec.12 zh-cn.pdf",
-    "Assets/Pasted image 20260514173447.png"
+    "Assets/Pasted image 20260516233505.png"
   ]
 }
