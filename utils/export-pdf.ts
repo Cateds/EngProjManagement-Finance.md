@@ -132,6 +132,15 @@ async function main() {
 
             clone.querySelectorAll("script").forEach((s) => s.remove());
 
+            clone.querySelectorAll("details").forEach((d) => {
+              d.setAttribute("open", "");
+            });
+            clone.querySelectorAll(".callout.is-collapsible.is-collapsed").forEach((c) => {
+              c.classList.remove("is-collapsed");
+              const content = c.querySelector(".callout-content") as HTMLElement;
+              if (content) content.style.gridTemplateRows = "1fr";
+            });
+
             const title =
               document.querySelector("h1.article-title")?.textContent?.trim() ||
               document.title ||
@@ -192,8 +201,8 @@ async function main() {
       timeout: 60000,
     });
 
-    // Wait for Google Fonts to load
-    await new Promise((r) => setTimeout(r, 1000));
+    // Wait for Google Fonts & KaTeX fonts to load
+    await new Promise((r) => setTimeout(r, 2000));
 
     await pdfPage.pdf({
       path: OUTPUT_FILE,
@@ -268,7 +277,7 @@ function buildHtml(articles: ArticleData[]): string {
 
   body {
     font-family: "Noto Serif SC", Inter, "Helvetica Neue", sans-serif;
-    font-size: 14pt;
+    font-size: 10pt;
     line-height: 1.7;
     color: #2a3840;
   }
@@ -284,19 +293,19 @@ function buildHtml(articles: ArticleData[]): string {
     text-align: center;
   }
   .cover h1 {
-    font-size: 32pt;
+    font-size: 24pt;
     font-family: "Noto Serif SC", serif;
     color: #2a3840;
     margin-bottom: 0.3em;
     letter-spacing: 0.06em;
   }
   .cover .sub {
-    font-size: 16pt;
+    font-size: 12pt;
     color: #7a9aaa;
     margin-bottom: 2em;
   }
   .cover .date {
-    font-size: 12pt;
+    font-size: 9pt;
     color: #b0b8bc;
   }
 
@@ -305,7 +314,7 @@ function buildHtml(articles: ArticleData[]): string {
     page-break-after: always;
   }
   .toc h2 {
-    font-size: 22pt;
+    font-size: 16pt;
     color: #2a3840;
     margin-bottom: 0.8em;
     padding-bottom: 0.25em;
@@ -314,7 +323,7 @@ function buildHtml(articles: ArticleData[]): string {
   .toc ul { list-style: none; }
   .toc li {
     padding: 0.4em 0;
-    font-size: 12pt;
+    font-size: 9pt;
     border-bottom: 1px dotted #d4dce2;
   }
   .toc a { color: #2a3840; text-decoration: none; }
@@ -327,7 +336,7 @@ function buildHtml(articles: ArticleData[]): string {
     page-break-before: auto;
   }
   .a-title {
-    font-size: 22pt;
+    font-size: 16pt;
     color: #2a3840;
     margin-bottom: 0.6em;
     padding-bottom: 0.25em;
@@ -342,30 +351,30 @@ function buildHtml(articles: ArticleData[]): string {
     column-gap: 1.5cm;
     column-rule: 1px solid #e0e6e9;
     column-fill: auto;
-    font-size: 14pt;
+    font-size: 10pt;
   }
 
   /* ── Typography ── */
-  .a-content h1 { font-size: 20pt; margin: 1.2em 0 0.3em; color: #2a3840; break-inside: avoid; }
+  .a-content h1 { font-size: 14pt; margin: 1.2em 0 0.3em; color: #2a3840; break-inside: avoid; }
   .a-content h2 {
-    font-size: 18pt;
+    font-size: 12pt;
     margin: 1em 0 0.25em;
     color: #5a6a72;
     border-bottom: 1px solid #e8ecee;
     padding-bottom: 0.15em;
     break-inside: avoid;
   }
-  .a-content h3 { font-size: 16pt; margin: 0.9em 0 0.2em; color: #5a6a72; break-inside: avoid; }
-  .a-content h4 { font-size: 14pt; margin: 0.8em 0 0.15em; break-inside: avoid; }
-  .a-content p { margin: 0.6em 0; font-size: 14pt; }
+  .a-content h3 { font-size: 11pt; margin: 0.9em 0 0.2em; color: #5a6a72; break-inside: avoid; }
+  .a-content h4 { font-size: 10pt; margin: 0.8em 0 0.15em; break-inside: avoid; }
+  .a-content p { margin: 0.6em 0; font-size: 10pt; }
   .a-content a { color: #4a7a9a; }
   .a-content ul,
   .a-content ol {
     margin: 0.5em 0;
     padding-left: 1.6em;
-    font-size: 14pt;
+    font-size: 10pt;
   }
-  .a-content li { margin: 0.2em 0; font-size: 14pt; }
+  .a-content li { margin: 0.2em 0; font-size: 10pt; }
 
   /* ── Code ── */
   .a-content pre {
@@ -373,7 +382,7 @@ function buildHtml(articles: ArticleData[]): string {
     padding: 0.6em 0.8em;
     border-radius: 3px;
     font-family: "Cascadia Code", "Fira Code", monospace;
-    font-size: 9pt;
+    font-size: 7pt;
     line-height: 1.4;
     margin: 0.6em 0;
     border: 1px solid #e0e6e9;
@@ -381,10 +390,10 @@ function buildHtml(articles: ArticleData[]): string {
   }
   .a-content code {
     font-family: "Cascadia Code", "Fira Code", monospace;
-    font-size: 10pt;
+    font-size: 7pt;
   }
   .a-content pre code {
-    font-size: 9pt;
+    font-size: 7pt;
     white-space: pre-wrap;
     word-break: break-word;
   }
@@ -393,7 +402,7 @@ function buildHtml(articles: ArticleData[]): string {
     padding: 0.1em 0.3em;
     border-radius: 3px;
     color: #c7254e;
-    font-size: 10pt;
+    font-size: 7pt;
   }
 
   /* ── Tables ── */
@@ -401,7 +410,7 @@ function buildHtml(articles: ArticleData[]): string {
     border-collapse: collapse;
     width: 100%;
     margin: 0.8em 0;
-    font-size: 9pt;
+    font-size: 7pt;
     break-inside: avoid;
   }
   .a-content th,
@@ -423,7 +432,7 @@ function buildHtml(articles: ArticleData[]): string {
     border-radius: 0 4px 4px 0;
     break-inside: avoid;
   }
-  .a-content blockquote p { font-size: 14pt; }
+  .a-content blockquote p { font-size: 10pt; }
   .a-content blockquote p:first-child { margin-top: 0; }
   .a-content blockquote p:last-child { margin-bottom: 0; }
 
@@ -448,6 +457,8 @@ function buildHtml(articles: ArticleData[]): string {
 
   /* ── KaTeX ── */
   .a-content .katex { font-size: 1em !important; }
+  .a-content .katex-display { margin: 0.8em 0; overflow-x: auto; overflow-y: hidden; break-inside: avoid; }
+  .a-content .katex-display > .katex { text-align: center; }
 
   /* ── Mermaid ── */
   .a-content .mermaid svg {
@@ -477,12 +488,51 @@ function buildHtml(articles: ArticleData[]): string {
   }
   .a-content .callout-title { font-weight: 600; }
 
+  /* ── Details / collapsible ── */
+  .a-content details {
+    break-inside: avoid;
+    margin: 0.5em 0;
+    border-left: 4px solid #7a9aaa;
+    background: rgba(122, 154, 170, 0.06);
+    border-radius: 4px;
+    padding: 0.3em 0.8em;
+  }
+  .a-content details > summary {
+    font-weight: 600;
+    color: #5a6a72;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.3em 0;
+    list-style: none;
+  }
+  .a-content details > summary::-webkit-details-marker { display: none; }
+  .a-content details > summary::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    flex: 0 0 14px;
+    background-color: #7a9aaa;
+    mask-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpolyline points="6 9 12 15 18 9"%3E%3C/polyline%3E%3C/svg%3E');
+    mask-size: 14px 14px;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    transform: rotate(0deg);
+    opacity: 0.8;
+  }
+
   /* ── Page break utility ── */
   .page-break { page-break-before: always; }
 </style>
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
 />
 </head>
 <body>
