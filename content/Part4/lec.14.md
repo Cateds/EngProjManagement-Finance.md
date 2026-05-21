@@ -2,6 +2,10 @@
 title: 什么是公司？
 ---
 
+> **_What is a Company?_**
+>
+> Lecture @ 2026-5-20
+
 ## 公司
 
 ### 个体经营者

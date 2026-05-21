@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Part4/lec.14.md",
+                "file": "Part4/lec.16.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "lec.14"
+              "title": "lec.16"
             }
           }
         ],
@@ -200,22 +200,26 @@
   },
   "active": "98a0317cd56ee175",
   "lastOpenFiles": [
-    "Assets/Pasted image 20260520182120.png",
-    "Assets/Pasted image 20260520175846.png",
-    "Assets/Pasted image 20260520175646.png",
-    "Assets/Pasted image 20260520175110.png",
-    "index.md",
+    "Assets/Pasted image 20260521173530.png",
+    "Assets/Pasted image 20260521173047.png",
+    "Assets/Pasted image 20260521172938.png",
+    "Part4/lec.15.md",
+    "Assets/Pasted image 20260521170319.png",
+    "Assets/Pasted image 20260521170331.png",
+    "Assets/Pasted image 20260521170100.png",
+    "Assets/Pasted image 20260521170045.png",
+    "Assets/Pasted image 20260521165720.png",
+    "Assets/Pasted image 20260521165454.png",
+    "Assets/Pasted image 20260521165321.png",
+    "Assets/Pasted image 20260521163727.png",
+    "Part4/lec.15.assets",
     "Part4/lec.14.md",
+    "Part4/lec.16.md",
+    "index.md",
     "Part4/index.md",
     "Part4",
     "Part3/lec.13.md",
-    "Assets/Pasted image 20260519172951.png",
-    "Assets/Pasted image 20260519172743.png",
-    "Assets/Pasted image 20260519172718.png",
-    "Assets/Pasted image 20260519172659.png",
-    "Part3/lec.13.assets/image.png",
     "Part3/lec.13.assets",
-    "Assets/Pasted image 20260519165756.png",
     "Lectures/index.md",
     "Lectures",
     "Part2/index.md",
@@ -237,14 +241,10 @@
     "Part3/lec.9.md",
     "Part3/lec.12.md",
     "Part3/lec.11.md",
-    "Part3/lec.10.md",
-    "Part3/index.md",
     "Part3",
     "Part2",
     "Lectures2/Part1",
-    "Assets/Pasted image 20260519163331.png",
     "Ref/M&F Lec.13 zh-cn.pdf",
-    "Ref/M&F Lec.14 zh-cn.pdf",
-    "Ref/M&F Lec.15 zh-cn.pdf"
+    "Ref/M&F Lec.14 zh-cn.pdf"
   ]
 }

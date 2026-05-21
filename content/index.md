@@ -30,3 +30,5 @@ GitHub 仓库链接在 [EngProjManagement-Finance.md](https://github.com/Cateds/
   - [[lec.13|Lecture.13 资本、运营支出，总拥有成本]]
 - **[[Part4/index|4. 公司管理]]**
   - [[lec.14|Lecture.14 什么是公司？]]
+  - [[lec.15|Lecture.15 公司的结构]]
+  - [[lec.16|Lecture.16 公司战略与工程职业]]
