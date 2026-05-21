@@ -5,14 +5,6 @@ import { resolve, join } from "node:path";
 import { execSync } from "node:child_process";
 import serveHandler from "serve-handler";
 
-// ── Configuration ──
-const CONCURRENCY = 4;
-const PUBLIC_DIR = resolve(process.cwd(), "public");
-const SITEMAP_PATH = join(PUBLIC_DIR, "sitemap.xml");
-const OUTPUT_DIR = resolve(process.cwd(), "pdf-output");
-const OUTPUT_FILE = join(OUTPUT_DIR, "工程项目管理与财务.pdf");
-const SITE_TITLE = "工程项目管理与财务";
-
 // ── Types ──
 interface ArticleData {
   path: string;
@@ -22,13 +14,36 @@ interface ArticleData {
   sortKey: string;
 }
 
-// ═══════════════════════════════════════════════════════════════════
-// Main
-// ═══════════════════════════════════════════════════════════════════
+// ── Configuration ──
+const CONCURRENCY = 4;
+const PUBLIC_DIR = resolve(process.cwd(), "public");
+const SITEMAP_PATH = join(PUBLIC_DIR, "sitemap.xml");
+const OUTPUT_DIR = resolve(process.cwd(), "pdf-output");
+const SITE_TITLE = "工程项目管理与财务";
+const SITE_URL = "https://cateds.github.io/EngProjManagement-Finance.md/";
+const GITHUB_URL = "https://github.com/cateds/EngProjManagement-Finance.md";
+const AUTHOR_URL = "https://cateds.github.io/";
+const AUTHOR_NAME = "Cateds";
+
+const SKIP_BUILD = process.argv.includes("--skip-build");
+const CI = process.env.CI === "true";
+const TAG = process.argv.find((a, i) => a === "--tag" && process.argv[i + 1])?.replace("--tag ", "") ||
+  process.env.RELEASE_TAG ||
+  "";
+const OUTPUT_FILE = join(OUTPUT_DIR, TAG ? `工程项目管理与财务-${TAG}.pdf` : "工程项目管理与财务.pdf");
+
 async function main() {
-  // 1. Build
-  console.log("[1/5] Building site...");
-  execSync("bun run build", { stdio: "inherit", cwd: process.cwd() });
+  // 1. Build (skip if already done in CI)
+  if (!SKIP_BUILD) {
+    console.log("[1/5] Building site...");
+    execSync("bun run build", { stdio: "inherit", cwd: process.cwd() });
+  } else {
+    console.log("[1/5] Build skipped (public dir already exists)");
+    if (!readFileSync(SITEMAP_PATH, "utf-8").trim()) {
+      console.error("❌ Sitemap is empty. Run build first or check public/ dir.");
+      process.exit(1);
+    }
+  }
 
   if (!readFileSync(SITEMAP_PATH, "utf-8").trim()) {
     console.error("❌ Sitemap is empty. Build may have failed or enableSiteMap is off.");
@@ -69,7 +84,10 @@ async function main() {
 
   // 4. Scrape pages in parallel with headless Chromium
   console.log(`[4/5] Extracting page content (${CONCURRENCY} workers)...`);
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: CI ? ["--no-sandbox", "--disable-setuid-sandbox"] : [],
+  });
   const articles: ArticleData[] = [];
 
   try {
@@ -308,6 +326,41 @@ function buildHtml(articles: ArticleData[]): string {
     font-size: 9pt;
     color: #b0b8bc;
   }
+  .cover .version {
+    font-size: 9pt;
+    color: #7a9aaa;
+    margin-top: 0.5em;
+  }
+  .cover .links {
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+    gap: 1.2em;
+    font-size: 8pt;
+    color: #a0aab4;
+  }
+  .cover .links a {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    color: #7a9aaa;
+    text-decoration: none;
+  }
+  .cover .links svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: #7a9aaa;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .cover .author {
+    margin-top: 2em;
+    font-size: 11pt;
+    color: #5a6a72;
+    font-family: "Inter", sans-serif;
+  }
 
   /* ── TOC ── */
   .toc {
@@ -538,8 +591,23 @@ function buildHtml(articles: ArticleData[]): string {
 <body>
   <div class="cover">
     <h1>${escapeHtml(SITE_TITLE)}</h1>
-    <p class="sub">课程讲义</p>
+    <p class="sub">课程笔记${TAG ? ` · ${escapeHtml(TAG)}` : ""}</p>
+    <p class="author">by ${escapeHtml(AUTHOR_NAME)}</p>
     <p class="date">${date}</p>
+    <div class="links">
+      <a href="${SITE_URL}">
+        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        在线阅读
+      </a>
+      <a href="${GITHUB_URL}">
+        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a href="${AUTHOR_URL}">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Cateds
+      </a>
+    </div>
   </div>
 
   <div class="toc">
