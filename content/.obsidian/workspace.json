@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Part4/lec.16.md",
+                "file": "Part3/lec.13.2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "lec.16"
+              "title": "lec.13.2"
             }
           }
         ],
@@ -198,8 +198,10 @@
       "bases:新建数据库": false
     }
   },
-  "active": "98a0317cd56ee175",
+  "active": "1e9233e9664880ee",
   "lastOpenFiles": [
+    "Part3/lec.13.1.md",
+    "Part4/lec.16.md",
     "Assets/Pasted image 20260521173530.png",
     "Assets/Pasted image 20260521173047.png",
     "Assets/Pasted image 20260521172938.png",
@@ -211,14 +213,12 @@
     "Assets/Pasted image 20260521165720.png",
     "Assets/Pasted image 20260521165454.png",
     "Assets/Pasted image 20260521165321.png",
-    "Assets/Pasted image 20260521163727.png",
     "Part4/lec.15.assets",
     "Part4/lec.14.md",
-    "Part4/lec.16.md",
     "index.md",
     "Part4/index.md",
     "Part4",
-    "Part3/lec.13.md",
+    "Part3/lec.13.2.md",
     "Part3/lec.13.assets",
     "Lectures/index.md",
     "Lectures",

@@ -4,11 +4,11 @@ title: 首页
 
 > Lecture notes for Engineering Project Management and Finance (EPM&F) course @ 2025-2026 Spring, Glasgow College, UESTC.
 
-有一些嵌套层级的公式在 GitHub 上无法正常显示，建议下载到本地后使用支持的 Markdown 编辑器查看（如 VSCode, Typora, Obsidian 等）。或者访问上方 GitHub Pages 版本查看。
-
 如果有帮助的话，欢迎在 GitHub 上给本项目点个 Star ⭐️
 
 GitHub 仓库链接在 [EngProjManagement-Finance.md](https://github.com/Cateds/EngProjManagement-Finance.md)
+
+可以去 [个人主页](https://cateds.github.io/) 看看其他科目的内容。
 
 ## 目录
 
@@ -27,7 +27,8 @@ GitHub 仓库链接在 [EngProjManagement-Finance.md](https://github.com/Cateds/
   - [[lec.10|Lecture.10 自制与外购决策]]
   - [[lec.11|Lecture.11 盈亏平衡分析]]
   - [[lec.12|Lecture.12 外包，内包，正确外包]]
-  - [[lec.13|Lecture.13 资本、运营支出，总拥有成本]]
+  - [[lec.13.1|Lecture.13.1 贴现现金流]]
+  - [[lec.13.2|Lecture.13.2 资本、运营支出，总拥有成本]]
 - **[[Part4/index|4. 公司管理]]**
   - [[lec.14|Lecture.14 什么是公司？]]
   - [[lec.15|Lecture.15 公司的结构]]

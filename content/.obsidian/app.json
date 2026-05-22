@@ -2,5 +2,6 @@
   "newFileLocation": "folder",
   "attachmentFolderPath": "Assets",
   "newFileFolderPath": "Assets",
-  "promptDelete": false
+  "promptDelete": false,
+  "alwaysUpdateLinks": true
 }
