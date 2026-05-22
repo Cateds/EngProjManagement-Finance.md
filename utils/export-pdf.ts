@@ -5,6 +5,7 @@ import { resolve, join } from "node:path";
 import { execSync } from "node:child_process";
 import serveHandler from "serve-handler";
 import { buildHtml, type ArticleData } from "./build-html";
+import { rewriteInternalLinks } from "./rewrite-links";
 
 // ── Configuration ──
 const CONCURRENCY = 4;
@@ -190,6 +191,9 @@ async function main() {
 
     articles.sort((a, b) => a.sortKey.localeCompare(b.sortKey, undefined, { numeric: true }));
     console.log(`\n   Extracted ${articles.length}/${urls.length} articles.`);
+
+    // Rewrite internal links for PDF
+    rewriteInternalLinks(articles, pathPrefix);
 
     // 5. Assemble HTML & print to PDF
     console.log("[5/5] Generating PDF...");
