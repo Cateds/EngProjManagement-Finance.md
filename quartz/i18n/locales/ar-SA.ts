@@ -64,6 +64,7 @@ export default {
           : minutes == 2
             ? `دقيقتان للقراءة`
             : `${minutes} دقائق للقراءة`,
+      wordCount: ({ words }) => `${words} كلمة`,
     },
   },
   pages: {

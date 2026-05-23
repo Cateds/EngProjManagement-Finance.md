@@ -58,6 +58,7 @@ export default {
     },
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} хв читання`,
+      wordCount: ({ words }) => `${words} слів`,
     },
   },
   pages: {

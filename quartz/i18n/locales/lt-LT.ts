@@ -58,6 +58,7 @@ export default {
     },
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} min skaitymo`,
+      wordCount: ({ words }) => `${words} žodžių`,
     },
   },
   pages: {

@@ -59,6 +59,7 @@ export default {
     },
     contentMeta: {
       readingTime: ({ minutes }) => `زمان تقریبی مطالعه: ${minutes} دقیقه`,
+      wordCount: ({ words }) => `${words} کلمه`,
     },
   },
   pages: {

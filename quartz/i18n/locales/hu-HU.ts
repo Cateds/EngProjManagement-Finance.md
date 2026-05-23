@@ -58,6 +58,7 @@ export default {
     },
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} perces olvasás`,
+      wordCount: ({ words }) => `${words} szó`,
     },
   },
   pages: {

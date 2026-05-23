@@ -58,6 +58,7 @@ export default {
     },
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} phút đọc`,
+      wordCount: ({ words }) => `${words} từ`,
     },
   },
   pages: {

@@ -59,6 +59,7 @@ export default {
     },
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} דקות קריאה`,
+      wordCount: ({ words }) => `${words} מילים`,
     },
   },
   pages: {

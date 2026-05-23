@@ -58,6 +58,7 @@ export default {
     },
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes}分钟阅读`,
+      wordCount: ({ words }) => `${words}字`,
     },
   },
   pages: {

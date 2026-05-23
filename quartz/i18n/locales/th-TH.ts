@@ -58,6 +58,7 @@ export default {
     },
     contentMeta: {
       readingTime: ({ minutes }) => `อ่านราว ${minutes} นาที`,
+      wordCount: ({ words }) => `${words} คำ`,
     },
   },
   pages: {

@@ -58,6 +58,7 @@ export default {
     },
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} dakika okuma süresi`,
+      wordCount: ({ words }) => `${words} kelime`,
     },
   },
   pages: {

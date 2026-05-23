@@ -59,6 +59,7 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) =>
         minutes === 1 ? "1 minuut leestijd" : `${minutes} minuten leestijd`,
+      wordCount: ({ words }) => `${words} woorden`,
     },
   },
   pages: {

@@ -58,6 +58,7 @@ export default {
     },
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} мин оқу`,
+      wordCount: ({ words }) => `${words} сөз`,
     },
   },
   pages: {
