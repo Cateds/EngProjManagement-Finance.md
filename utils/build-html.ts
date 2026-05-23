@@ -16,29 +16,29 @@ interface ArticleData {
   content: string;
   folder: string;
   sortKey: string;
+  partTitle?: string;
 }
 
 export function buildHtml(
   articles: ArticleData[],
   opts: BuildHtmlOptions,
 ): string {
-  const tocItems = articles
-    .map(
-      (a, i) =>
-        `<li><a href="#page-${i}">${escapeHtml(a.title || "(无标题)")}</a></li>`,
-    )
-    .join("\n");
-
   const articlesHtml = articles
-    .map(
-      (a, i) => `
+    .map((a, i) => {
+      const isIndex = a.path === "/" || a.path === "/index";
+      const contentClass = isIndex ? "index-content" : "a-content";
+      const partLabel = a.partTitle
+        ? `<div class="part-label">${escapeHtml(a.partTitle)}</div>`
+        : "";
+      return `
   <div class="article" id="page-${i}">
+    ${partLabel}
     <h1 class="a-title">${escapeHtml(a.title || "")}</h1>
-    <div class="a-content">
+    <div class="${contentClass}">
       ${a.content}
     </div>
-  </div>`,
-    )
+  </div>`;
+    })
     .join("\n");
 
   const date = new Date().toISOString().split("T")[0];
@@ -80,11 +80,6 @@ export function buildHtml(
         Cateds
       </a>
     </div>
-  </div>
-
-  <div class="toc">
-    <h2>目录</h2>
-    <ul>${tocItems}</ul>
   </div>
 
   ${articlesHtml}

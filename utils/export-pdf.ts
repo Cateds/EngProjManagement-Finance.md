@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 import http from "node:http";
-import { readFileSync, mkdirSync } from "node:fs";
+import { readFileSync, mkdirSync, existsSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { execSync } from "node:child_process";
 import serveHandler from "serve-handler";
@@ -83,6 +83,8 @@ async function main() {
     args: CI ? ["--no-sandbox", "--disable-setuid-sandbox"] : [],
   });
   const articles: ArticleData[] = [];
+  const partTitles = extractPartTitles();
+  console.log(`   Part titles: ${JSON.stringify(Object.fromEntries(partTitles))}`);
 
   try {
     interface Task {
@@ -164,8 +166,17 @@ async function main() {
             const folder = parts.length > 0 ? parts[0] : ".";
             const fileName = parts.length > 1 ? parts[parts.length - 1] : "index";
 
+            // Skip Part index pages (Part1/index.md, Part2/index.md, etc.)
+            if (folder.startsWith("Part") && fileName === "index") {
+              console.log(`${tag} ${task.localPath} (skipped - part index)`);
+              continue;
+            }
+
             const sortKey =
               fileName === "index" ? `${folder}/__00_index` : `${folder}/${fileName}`;
+
+            // Determine part title for articles in Part directories
+            const partTitle = partTitles.get(folder) || undefined;
 
             articles.push({
               path: task.localPath,
@@ -173,6 +184,7 @@ async function main() {
               content: data.content,
               folder,
               sortKey,
+              partTitle,
             });
             console.log(`${tag} ${task.localPath} ✓`);
           } else {
@@ -247,6 +259,25 @@ function getCommonPathPrefix(urls: string[]): string {
   const paths = urls.map((u) => new URL(u).pathname);
   paths.sort((a, b) => a.length - b.length);
   return paths[0];
+}
+
+function extractPartTitles(): Map<string, string> {
+  const partTitles = new Map<string, string>();
+  const contentDir = resolve(process.cwd(), "content");
+  const partDirs = ["Part1", "Part2", "Part3", "Part4"];
+  
+  for (const partDir of partDirs) {
+    const indexPath = join(contentDir, partDir, "index.md");
+    if (existsSync(indexPath)) {
+      const content = readFileSync(indexPath, "utf-8");
+      const titleMatch = content.match(/^title:\s*(.+)$/m);
+      if (titleMatch) {
+        partTitles.set(partDir, titleMatch[1].trim());
+      }
+    }
+  }
+  
+  return partTitles;
 }
 
 main().catch((err) => {
