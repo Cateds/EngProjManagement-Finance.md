@@ -8,6 +8,8 @@
 
 如果有帮助的话，欢迎在 GitHub 上给本项目点个 Star ⭐️
 
+如果需要离线版本的 PDF，可以前往 [GitHub 仓库的 Releases 页面](https://github.com/Cateds/EngProjManagement-Finance.md/releases)下载最新版。
+
 ---
 
 > 重生之我在电子信息专业听英国人讲不知道什么年代的管理学然后现学现用。
