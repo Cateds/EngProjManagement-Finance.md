@@ -24,7 +24,7 @@ const TAG =
   process.argv.find((a, i) => a === "--tag" && process.argv[i + 1])?.replace("--tag ", "") ||
   process.env.RELEASE_TAG ||
   "";
-const OUTPUT_FILE = join(OUTPUT_DIR, "工程项目管理与财务.pdf");
+const OUTPUT_FILE = join(OUTPUT_DIR, "EngProjManagement-Finance.pdf");
 
 async function main() {
   // 1. Build (skip if already done in CI)
