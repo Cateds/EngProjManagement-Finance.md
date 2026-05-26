@@ -19,12 +19,19 @@ jobs:
           bun-version: latest
       - name: Install Dependencies
         run: bun install
-      - name: Install Chromium deps
+      - name: Install system fonts (Inter, Noto CJK, Cascadia Code)
         run: |
           sudo apt-get update
           sudo apt-get install -y libnss3 libnspr4 libatk1.0-0t64 libatk-bridge2.0-0t64 \
             libcups2t64 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 \
-            libgbm1 libpango-1.0-0 libcairo2 libasound2t64 libxshmfence1
+            libgbm1 libpango-1.0-0 libcairo2 libasound2t64 libxshmfence1 \
+            fonts-noto-cjk fonts-noto-cjk-extra fonts-cascadia-code
+          # Inter 字体（不在 apt 仓库，手动下载安装）
+          mkdir -p ~/.fonts
+          wget -q "https://github.com/rsms/inter/releases/download/v4.1/Inter-4.1.zip" -O /tmp/Inter-4.1.zip
+          unzip -qo /tmp/Inter-4.1.zip -d /tmp/Inter-4.1
+          find /tmp/Inter-4.1 -name "Inter*.ttf" ! -path "*/InterDisplay/*" -exec cp {} ~/.fonts/ \;
+          fc-cache -f ~/.fonts
       - name: Build Quartz site
         run: bun run build
       - name: Generate PDF

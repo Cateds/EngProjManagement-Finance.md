@@ -4,7 +4,7 @@ export const PDF_STYLES = `
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: "Inter", "Helvetica Neue", sans-serif;
+  font-family: "Inter", "Noto Sans SC", "Noto Sans CJK SC", "Helvetica Neue", sans-serif;
   font-size: 10pt;
   line-height: 1.7;
   color: #5a6a72;
@@ -22,7 +22,7 @@ body {
 }
 .cover h1 {
   font-size: 24pt;
-  font-family: "Noto Serif SC", serif;
+  font-family: "Noto Serif SC", "Noto Serif CJK SC", serif;
   color: #2a3840;
   margin-bottom: 0.3em;
   letter-spacing: 0.06em;
@@ -75,7 +75,7 @@ body {
 /* ── Part Label ── */
 .part-label {
   font-size: 12pt;
-  font-family: "Noto Serif SC", serif;
+  font-family: "Noto Serif SC", "Noto Serif CJK SC", serif;
   color: #7a9aaa;
   margin-bottom: 0.3em;
   font-weight: 600;
@@ -95,7 +95,7 @@ body {
   margin-bottom: 0.6em;
   padding-bottom: 0.25em;
   border-bottom: 2px solid #7a9aaa;
-  font-family: "Noto Serif SC", serif;
+  font-family: "Noto Serif SC", "Noto Serif CJK SC", serif;
   font-weight: 600;
   column-span: all;
 }
@@ -117,11 +117,11 @@ body {
 
 /* ── Typography ── */
 .a-content h1,
-.index-content h1 { font-size: 14pt; font-family: "Noto Serif SC", serif; font-weight: 600; margin: 1.2em 0 0.3em; color: #2a3840; break-inside: avoid; }
+.index-content h1 { font-size: 14pt; font-family: "Noto Serif SC", "Noto Serif CJK SC", serif; font-weight: 600; margin: 1.2em 0 0.3em; color: #2a3840; break-inside: avoid; }
 .a-content h2,
 .index-content h2 {
   font-size: 12pt;
-  font-family: "Noto Serif SC", serif;
+  font-family: "Noto Serif SC", "Noto Serif CJK SC", serif;
   font-weight: 600;
   margin: 1em 0 0.25em;
   color: #5a6a72;
@@ -130,9 +130,9 @@ body {
   break-inside: avoid;
 }
 .a-content h3,
-.index-content h3 { font-size: 11pt; font-family: "Noto Serif SC", serif; font-weight: 600; margin: 0.9em 0 0.2em; color: #5a6a72; break-inside: avoid; }
+.index-content h3 { font-size: 11pt; font-family: "Noto Serif SC", "Noto Serif CJK SC", serif; font-weight: 600; margin: 0.9em 0 0.2em; color: #5a6a72; break-inside: avoid; }
 .a-content h4,
-.index-content h4 { font-size: 10pt; font-family: "Noto Serif SC", serif; font-weight: 600; margin: 0.8em 0 0.15em; break-inside: avoid; }
+.index-content h4 { font-size: 10pt; font-family: "Noto Serif SC", "Noto Serif CJK SC", serif; font-weight: 600; margin: 0.8em 0 0.15em; break-inside: avoid; }
 .a-content p,
 .index-content p { margin: 0.6em 0; font-size: 10pt; }
 .a-content a,

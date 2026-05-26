@@ -53,7 +53,7 @@ export function buildHtml(
 </style>
 <link
   rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+  href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&amp;family=Noto+Sans+SC:wght@400;600&amp;family=Inter:wght@400;500;600&amp;display=swap"
 />
 <link
   rel="stylesheet"
