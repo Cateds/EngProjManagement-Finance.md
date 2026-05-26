@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Part2/lec.7.md",
+                "file": "Part2/lec.8.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "lec.7"
+              "title": "lec.8"
             }
           }
         ],
@@ -200,6 +200,12 @@
   },
   "active": "98a0317cd56ee175",
   "lastOpenFiles": [
+    "Assets/Pasted image 20260527001952.png",
+    "Assets/Pasted image 20260527001856.png",
+    "Assets/Pasted image 20260527001812.png",
+    "Assets/Pasted image 20260527000407.png",
+    "Part2/lec.7.md",
+    "Ref/M&F Lec.8 zh-cn.pdf",
     "Assets/Pasted image 20260526233818.png",
     "Assets/Pasted image 20260526233337.png",
     "Assets/Pasted image 20260526232245.png",
@@ -207,10 +213,6 @@
     "Assets/Pasted image 20260526212102.png",
     "Assets/Pasted image 20260526205629.png",
     "Assets/Pasted image 20260526204744.png",
-    "Assets/Pasted image 20260526203717.png",
-    "Assets/Pasted image 20260526203520.png",
-    "Assets/Pasted image 20260526203120.png",
-    "Assets/Pasted image 20260526202931.png",
     "Part3/lec.13.1.md",
     "Part3/lec.13.1.assets",
     "index.md",
@@ -226,7 +228,6 @@
     "Lectures",
     "Part2/index.md",
     "Part2/lec.8.md",
-    "Part2/lec.7.md",
     "Part2/lec.6.md",
     "Part2/lec.5.md",
     "Part1/lec.8.md",
@@ -244,7 +245,6 @@
     "Part3/lec.12.md",
     "Part3",
     "Part2",
-    "Lectures2/Part1",
-    "Ref/M&F Lec.13 zh-cn.pdf"
+    "Lectures2/Part1"
   ]
 }
