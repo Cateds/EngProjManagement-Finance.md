@@ -304,12 +304,11 @@ body {
 .a-content details,
 .index-content details {
   break-inside: avoid;
-  margin: 0.8em 0;
+  margin: 0.8em auto;
   border: 1px solid #d4dce2;
   border-radius: 8px;
   background: #f8fafb;
   padding: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 .a-content details > summary,
 .index-content details > summary {
@@ -340,7 +339,7 @@ body {
 }
 .a-content details[open],
 .index-content details[open] {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-color: #b0c4d0;
 }
 .a-content details[open] > summary,
 .index-content details[open] > summary {
