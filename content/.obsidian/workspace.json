@@ -4,39 +4,36 @@
     "type": "split",
     "children": [
       {
-        "id": "b2412737effdf304",
+        "id": "b413d031a89a25cf",
         "type": "tabs",
         "children": [
           {
-            "id": "c22970a904abbe63",
+            "id": "d91b080c5710aed3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "Part1/lec.3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "lec.3"
             }
           },
           {
-            "id": "98a0317cd56ee175",
+            "id": "38936a7a2ec68db1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Part2/lec.8.md",
-                "mode": "source",
-                "source": false
+                "file": "Ref/M&F Lec3 zh.pdf"
               },
-              "icon": "lucide-file",
-              "title": "lec.8"
+              "icon": "lucide-file-text",
+              "title": "M&F Lec3 zh"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,7 +90,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "b4a998b4afbeed8a",
@@ -198,8 +196,12 @@
       "bases:新建数据库": false
     }
   },
-  "active": "98a0317cd56ee175",
+  "active": "d91b080c5710aed3",
   "lastOpenFiles": [
+    "Assets/Pasted image 20260530024736.png",
+    "Ref/M&F Lec3 zh.pdf",
+    "Part1/lec.3.md",
+    "Part2/lec.8.md",
     "Assets/Pasted image 20260530022312.png",
     "Assets/Pasted image 20260530022002.png",
     "Assets/Pasted image 20260530021806.png",
@@ -210,7 +212,6 @@
     "Assets/Pasted image 20260530010808.png",
     "Assets/Pasted image 20260530010004.png",
     "Assets/Pasted image 20260530005653.png",
-    "Assets/Pasted image 20260530004200.png",
     "Part2/lec.7.md",
     "Ref/M&F Lec.8 zh-cn.pdf",
     "Part3/lec.13.1.md",
@@ -227,7 +228,6 @@
     "Lectures/index.md",
     "Lectures",
     "Part2/index.md",
-    "Part2/lec.8.md",
     "Part2/lec.6.md",
     "Part2/lec.5.md",
     "Part1/lec.8.md",
@@ -235,7 +235,6 @@
     "Part1/lec.6.md",
     "Part1/lec.5.md",
     "Part1/lec.4.md",
-    "Part1/lec.3.md",
     "Part1/lec.2.md",
     "Part1/lec.1.md",
     "Part1/index.md",
@@ -244,7 +243,6 @@
     "Part3/lec.9.md",
     "Part3/lec.12.md",
     "Part3",
-    "Part2",
-    "Lectures2/Part1"
+    "Part2"
   ]
 }
