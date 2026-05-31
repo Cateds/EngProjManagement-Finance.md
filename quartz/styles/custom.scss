@@ -84,7 +84,8 @@ blockquote {
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
-table {
+.table-container > table {
+  margin: 1rem auto;
   border-radius: var(--radius-md);
   overflow: hidden;
 }
@@ -212,8 +213,9 @@ summary {
   padding: 0.65em 1em 0.65em 2.2em;
   border-radius: var(--radius-md);
   border-bottom: 1px solid transparent;
-  transition: background var(--transition-fast),
-              border-color var(--transition-fast);
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
   user-select: none;
   position: relative;
 
@@ -230,14 +232,17 @@ summary {
     transform: translateY(-50%);
     font-size: 0.7em;
     color: var(--gray);
-    transition: color var(--transition-fast),
-                transform var(--transition-fast);
+    transition:
+      color var(--transition-fast),
+      transform var(--transition-fast);
     line-height: 1;
   }
 
   &:hover {
     background: var(--highlight);
-    &::before { color: var(--secondary); }
+    &::before {
+      color: var(--secondary);
+    }
   }
 }
 
