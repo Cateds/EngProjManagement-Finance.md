@@ -2,7 +2,7 @@
 title: 工程经济学导论
 ---
 
-> **_Introducton to Engineering Economics_**
+> **_Introduction to Engineering Economics_**
 >
 > Lecture @ 2026-5-12
 
@@ -35,7 +35,7 @@ title: 工程经济学导论
 
 多种财务报告都主要关注 **提前规划 (Planning Ahead)**。具体来说，是包括现金流预测 (cashflow forecasting) ，盈亏平衡分析 (breakeven analysis) ，预算设定 (budget setting) 等等。
 
-其他的报告主要关注与年终 **结果汇报 (Reporting Results)**，包括损益表 (Profit and Loss, P&L) 和资产负债表 (Balance Sheet)。
+其他的报告主要关注于年终 **结果汇报 (Reporting Results)**，包括损益表 (Profit and Loss, P&L) 和资产负债表 (Balance Sheet)。
 
 ---
 
@@ -194,9 +194,9 @@ EBITDA 是 Earnings Before Interest, Taxes, Depreciation, and Amortization 的�
 
 ##### Interest (利息)
 
-许多公司会借款来为运营或者扩展计划融资，因此公司需要支付所接资金的利息。有时公司有过剩现金时，这个值为负数——也就是公司在赚取利息
+许多公司会借款来为运营或者扩展计划融资，因此公司需要支付所借资金的利息。有时公司有过剩现金时，这个值为负数——也就是公司在赚取利息
 
-通常利息对损益表对影响很小，尤其是对工程部门。这部分交给财务部门处理
+通常利息对损益表的影响很小，尤其是对工程部门。这部分交给财务部门处理
 
 ##### Taxes (税款)
 
@@ -212,7 +212,7 @@ EBITDA 是 Earnings Before Interest, Taxes, Depreciation, and Amortization 的�
 
 当一家公司购买设备时，把成本分摊到每年是合理的，这样在设备到达使用寿命时所有成本都被计入了。这个过程就叫做折旧 (Depreciation)。
 
-比如一个计算机在三年内摊销，则需要在每年的毛利润中扣除 $\frac{1}{3}$ 的成本。
+比如一台计算机在三年内折旧，则需要在每年的毛利润中扣除 $\frac{1}{3}$ 的成本。
 
 这样处理可以更准确的反映公司的真实业绩，不然在购入设备的那一年会有一个巨大的成本，而在其他年份没有成本，这样就无法准确反映公司的盈利能力。
 
@@ -225,7 +225,7 @@ EBITDA 是 Earnings Before Interest, Taxes, Depreciation, and Amortization 的�
 - 将超级 CEO 的成本在合同期内分摊
 - 将版权相关费用在版权期内分摊
 
-你可能已经猜到了，这仍然是财务部门的责任，给财务部门处理。
+你可能已经猜到了，这仍然是财务部门的责任，交给财务部门处理。
 
 #### 其他支出
 

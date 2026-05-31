@@ -101,17 +101,17 @@ $$
 
 $$
 \begin{aligned}
-  \mathrm{NV}_c &= \frac{V_1}{(1+r)^1} + \cdots + \frac{V_n}{(1+r)^n} \\
+  \mathrm{PV}_c &= \frac{V_1}{(1+r)^1} + \cdots + \frac{V_n}{(1+r)^n} \\
   & = \sum_{t=1}^{n} \frac{V_t}{(1+r)^t}
 \end{aligned}
 $$
 
-这样算出来的是总成本 (costs) 的现值 $\mathrm{NV}_c$，同样的，我们也可以算出总收入 (benefits) 的现值 $\mathrm{NV}_b$
+这样算出来的是总成本 (costs) 的现值 $\mathrm{PV}_c$，同样的，我们也可以算出总收入 (benefits) 的现值 $\mathrm{PV}_b$
 
 对于项目的整体净现值 (Net Present Value, NPV)，我们可以通过总收入的现值减去总成本的现值来计算：
 
 $$
-\mathrm{NPV} = \mathrm{NV}_b - \mathrm{NV}_c
+\mathrm{NPV} = \mathrm{PV}_b - \mathrm{PV}_c
 $$
 
 ### 效益成本比
@@ -119,7 +119,7 @@ $$
 除了净现值外，我们也可以通过 **效益成本比 (Benefit/Cost Ratio, B/C)** 来评估项目的价值。具体的计算方法是
 
 $$
-\mathrm{B/C} = \frac{\mathrm{NV}_b}{\mathrm{NV}_c}
+\mathrm{B/C} = \frac{\mathrm{PV}_b}{\mathrm{PV}_c}
 $$
 
 其值大于 1 且越大，越证明这个项目越值得考虑，反之则证明在经济上不可行。
