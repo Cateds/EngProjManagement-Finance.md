@@ -1,10 +1,5 @@
 import micromorph from "micromorph";
-import {
-  FullSlug,
-  RelativeURL,
-  getFullSlug,
-  normalizeRelativeURLs,
-} from "../../util/path";
+import { FullSlug, RelativeURL, getFullSlug, normalizeRelativeURLs } from "../../util/path";
 import { fetchCanonical } from "./util";
 
 // adapted from `micromorph`
@@ -29,9 +24,7 @@ const isSamePage = (url: URL): boolean => {
   return sameOrigin && samePath;
 };
 
-const getOpts = ({
-  target,
-}: Event): { url: URL; scroll?: boolean } | undefined => {
+const getOpts = ({ target }: Event): { url: URL; scroll?: boolean } | undefined => {
   if (!isElement(target)) return;
   if (target.attributes.getNamedItem("target")?.value === "_blank") return;
   const a = target.closest("a");
@@ -120,18 +113,14 @@ async function _navigate(url: URL, isBack: boolean = false) {
 
     if (!isBack) {
       if (url.hash) {
-        const el = document.getElementById(
-          decodeURIComponent(url.hash.substring(1)),
-        );
+        const el = document.getElementById(decodeURIComponent(url.hash.substring(1)));
         el?.scrollIntoView();
       } else {
         window.scrollTo({ top: 0 });
       }
     }
 
-    const elementsToRemove = document.head.querySelectorAll(
-      ":not([data-persist])",
-    );
+    const elementsToRemove = document.head.querySelectorAll(":not([data-persist])");
     elementsToRemove.forEach((el) => el.remove());
     const elementsToAdd = html.head.querySelectorAll(":not([data-persist])");
     elementsToAdd.forEach((el) => document.head.appendChild(el));
@@ -175,9 +164,7 @@ function createRouter() {
       event.preventDefault();
 
       if (isSamePage(url) && url.hash) {
-        const el = document.getElementById(
-          decodeURIComponent(url.hash.substring(1)),
-        );
+        const el = document.getElementById(decodeURIComponent(url.hash.substring(1)));
         el?.scrollIntoView();
         history.pushState({}, "", url);
         return;
@@ -188,8 +175,7 @@ function createRouter() {
 
     window.addEventListener("popstate", (event) => {
       const { url } = getOpts(event) ?? {};
-      if (window.location.hash && window.location.pathname === url?.pathname)
-        return;
+      if (window.location.hash && window.location.pathname === url?.pathname) return;
       navigate(new URL(window.location.toString()), true);
       return;
     });

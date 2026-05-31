@@ -19,10 +19,7 @@ interface ArticleData {
   partTitle?: string;
 }
 
-export function buildHtml(
-  articles: ArticleData[],
-  opts: BuildHtmlOptions,
-): string {
+export function buildHtml(articles: ArticleData[], opts: BuildHtmlOptions): string {
   const articlesHtml = articles
     .map((a, i) => {
       const isIndex = a.path === "/" || a.path === "/index";

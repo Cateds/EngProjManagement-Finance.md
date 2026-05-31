@@ -41,18 +41,14 @@ export function rewriteInternalLinks(
     // Step A: prefix all heading ids so they are unique across articles
     content = content.replace(
       /<(h[1-6])\b([^>]*?)\sid="([^"]*)"/gi,
-      (_m, tag: string, before: string, id: string) =>
-        `<${tag}${before} id="page-${i}--${id}"`,
+      (_m, tag: string, before: string, id: string) => `<${tag}${before} id="page-${i}--${id}"`,
     );
 
     // Step B: rewrite all <a href>
-    content = content.replace(
-      /\shref="([^"]*)"/gi,
-      (_m, rawHref: string) => {
-        const newHref = resolveHref(rawHref, basePath, pathToIndex);
-        return ` href="${newHref}"`;
-      },
-    );
+    content = content.replace(/\shref="([^"]*)"/gi, (_m, rawHref: string) => {
+      const newHref = resolveHref(rawHref, basePath, pathToIndex);
+      return ` href="${newHref}"`;
+    });
 
     articles[i].content = content;
   }
@@ -63,11 +59,7 @@ export function rewriteInternalLinks(
 // ── helpers ────────────────────────────────────────────────────────
 
 /** Resolve a relative or absolute internal href to a PDF #page anchor. */
-function resolveHref(
-  orig: string,
-  basePath: string,
-  pathToIndex: Map<string, number>,
-): string {
+function resolveHref(orig: string, basePath: string, pathToIndex: Map<string, number>): string {
   // Absolute (http, mailto, data, etc.)
   if (/^(https?:\/\/|mailto:|data:)/i.test(orig)) return orig;
   // Resource files
@@ -91,9 +83,7 @@ function resolveHref(
   // Not a known page path → leave as-is
   if (targetIndex === undefined) return orig;
 
-  return fragment
-    ? `#page-${targetIndex}--${fragment}`
-    : `#page-${targetIndex}`;
+  return fragment ? `#page-${targetIndex}--${fragment}` : `#page-${targetIndex}`;
 }
 
 /** Resolve a relative URL string against a base path like /Part1/lec.1 → /Part3/lec.13 */

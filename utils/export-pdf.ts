@@ -126,9 +126,7 @@ async function main() {
           await new Promise((r) => setTimeout(r, 400));
 
           const data = await page.evaluate(() => {
-            const article = document.querySelector<HTMLElement>(
-              "#quartz-body .center article",
-            );
+            const article = document.querySelector<HTMLElement>("#quartz-body .center article");
             if (!article) return null;
 
             const clone = article.cloneNode(true) as HTMLElement;
@@ -172,8 +170,7 @@ async function main() {
               continue;
             }
 
-            const sortKey =
-              fileName === "index" ? `${folder}/__00_index` : `${folder}/${fileName}`;
+            const sortKey = fileName === "index" ? `${folder}/__00_index` : `${folder}/${fileName}`;
 
             // Determine part title for articles in Part directories
             const partTitle = partTitles.get(folder) || undefined;
@@ -265,7 +262,7 @@ function extractPartTitles(): Map<string, string> {
   const partTitles = new Map<string, string>();
   const contentDir = resolve(process.cwd(), "content");
   const partDirs = ["Part1", "Part2", "Part3", "Part4"];
-  
+
   for (const partDir of partDirs) {
     const indexPath = join(contentDir, partDir, "index.md");
     if (existsSync(indexPath)) {
@@ -276,7 +273,7 @@ function extractPartTitles(): Map<string, string> {
       }
     }
   }
-  
+
   return partTitles;
 }
 

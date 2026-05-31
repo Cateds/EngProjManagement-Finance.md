@@ -11,18 +11,10 @@ function updateTocScrollState(shell: HTMLElement, list: HTMLElement) {
 }
 
 function setupTopControls(topControls: HTMLElement) {
-  const trigger = topControls.querySelector(
-    ".toc-trigger",
-  ) as HTMLButtonElement | null;
-  const panel = topControls.querySelector(
-    ".responsive-toc-panel",
-  ) as HTMLElement | null;
-  const shell = topControls.querySelector(
-    ".responsive-toc-scroll-shell",
-  ) as HTMLElement | null;
-  const list = topControls.querySelector(
-    ".responsive-toc-list",
-  ) as HTMLElement | null;
+  const trigger = topControls.querySelector(".toc-trigger") as HTMLButtonElement | null;
+  const panel = topControls.querySelector(".responsive-toc-panel") as HTMLElement | null;
+  const shell = topControls.querySelector(".responsive-toc-scroll-shell") as HTMLElement | null;
+  const list = topControls.querySelector(".responsive-toc-list") as HTMLElement | null;
 
   if (!trigger || !panel || !shell || !list) return;
 
@@ -69,24 +61,18 @@ function setupTopControls(topControls: HTMLElement) {
   window.addCleanup(() => list.removeEventListener("scroll", syncScrollState));
 
   desktopMediaQuery.addEventListener("change", closeOnDesktop);
-  window.addCleanup(() =>
-    desktopMediaQuery.removeEventListener("change", closeOnDesktop),
-  );
+  window.addCleanup(() => desktopMediaQuery.removeEventListener("change", closeOnDesktop));
 
   const links = list.querySelectorAll("a[href^='#']");
   for (const link of links) {
     link.addEventListener("click", closeOnAnchorClick);
-    window.addCleanup(() =>
-      link.removeEventListener("click", closeOnAnchorClick),
-    );
+    window.addCleanup(() => link.removeEventListener("click", closeOnAnchorClick));
   }
 
   requestAnimationFrame(syncScrollState);
 }
 
 document.addEventListener("nav", () => {
-  const topControlsList = document.querySelectorAll(
-    ".top-controls",
-  ) as NodeListOf<HTMLElement>;
+  const topControlsList = document.querySelectorAll(".top-controls") as NodeListOf<HTMLElement>;
   topControlsList.forEach((topControls) => setupTopControls(topControls));
 });

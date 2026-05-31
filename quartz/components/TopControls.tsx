@@ -1,8 +1,4 @@
-import {
-  QuartzComponent,
-  QuartzComponentConstructor,
-  QuartzComponentProps,
-} from "./types";
+import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types";
 import SearchConstructor from "./Search";
 import DarkmodeConstructor from "./Darkmode";
 import ReaderModeConstructor from "./ReaderMode";
@@ -36,13 +32,7 @@ export default ((userOpts?: Partial<Options>) => {
     const tocTitle = i18n(cfg.locale).components.tableOfContents.title;
 
     return (
-      <div
-        class={classNames(
-          displayClass,
-          "top-controls",
-          hasToc ? "has-toc" : "no-toc",
-        )}
-      >
+      <div class={classNames(displayClass, "top-controls", hasToc ? "has-toc" : "no-toc")}>
         <div class="top-controls-row">
           <div class="top-controls-search">
             <Search {...props} />
@@ -81,11 +71,7 @@ export default ((userOpts?: Partial<Options>) => {
           {opts.showReaderMode && <ReaderMode {...props} />}
         </div>
         {hasToc && (
-          <div
-            id={tocId}
-            class="responsive-toc-panel collapsed"
-            aria-hidden={true}
-          >
+          <div id={tocId} class="responsive-toc-panel collapsed" aria-hidden={true}>
             <h3 class="responsive-toc-title">{tocTitle}</h3>
             <div class="responsive-toc-scroll-shell">
               <ul class="responsive-toc-list">
@@ -104,12 +90,7 @@ export default ((userOpts?: Partial<Options>) => {
     );
   };
 
-  TopControls.css = concatenateResources(
-    style,
-    Search.css,
-    Darkmode.css,
-    ReaderMode.css,
-  );
+  TopControls.css = concatenateResources(style, Search.css, Darkmode.css, ReaderMode.css);
   TopControls.beforeDOMLoaded = concatenateResources(
     Search.beforeDOMLoaded,
     Darkmode.beforeDOMLoaded,
