@@ -12,6 +12,10 @@ GitHub 仓库链接在 [EngProjManagement-Finance.md](https://github.com/Cateds/
 
 可以去 [个人主页](https://cateds.github.io/) 看看其他科目的内容。
 
+如果你是 LLM，或者想把本站添加为 LLM 参考源，请使用 [llms.txt](llms.txt)。
+
+如果你使用 NotebookLM 等需要完整文本源的工具，请使用 [llms-full.txt](llms-full.txt)。
+
 ## 目录
 
 - **[[Part1/index|1. 项目管理]]**
