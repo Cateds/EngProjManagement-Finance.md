@@ -16,11 +16,19 @@ interface Item {
 type SearchType = "basic" | "tags";
 let searchType: SearchType = "basic";
 let currentSearchTerm: string = "";
+const wordCharRegex = /[\p{Letter}\p{Number}]/u;
 const encoder = (str: string): string[] => {
   const tokens: string[] = [];
   let bufferStart = -1;
   let bufferEnd = -1;
   const lower = str.toLowerCase();
+
+  const flushBuffer = () => {
+    if (bufferStart !== -1) {
+      tokens.push(lower.slice(bufferStart, bufferEnd));
+      bufferStart = -1;
+    }
+  };
 
   let i = 0;
   for (const char of lower) {
@@ -36,27 +44,19 @@ const encoder = (str: string): string[] => {
     const isWhitespace = code === 32 || code === 9 || code === 10 || code === 13;
 
     if (isCJK) {
-      if (bufferStart !== -1) {
-        tokens.push(lower.slice(bufferStart, bufferEnd));
-        bufferStart = -1;
-      }
+      flushBuffer();
       tokens.push(char);
-    } else if (isWhitespace) {
-      if (bufferStart !== -1) {
-        tokens.push(lower.slice(bufferStart, bufferEnd));
-        bufferStart = -1;
-      }
-    } else {
+    } else if (!isWhitespace && wordCharRegex.test(char)) {
       if (bufferStart === -1) bufferStart = i;
       bufferEnd = i + char.length;
+    } else {
+      flushBuffer();
     }
 
     i += char.length;
   }
 
-  if (bufferStart !== -1) {
-    tokens.push(lower.slice(bufferStart));
-  }
+  flushBuffer();
 
   return tokens;
 };

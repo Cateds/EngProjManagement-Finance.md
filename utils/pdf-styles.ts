@@ -112,7 +112,8 @@ body {
 /* ── Index page (single column) ── */
 .index-content {
   column-count: 1;
-  font-size: 10pt;
+  font-size: 9.2pt;
+  line-height: 1.55;
 }
 
 /* ── Typography ── */
@@ -147,6 +148,34 @@ body {
 }
 .a-content li,
 .index-content li { margin: 0.2em 0; font-size: 10pt; }
+
+/* ── Compact home index ── */
+.index-content h2 {
+  margin: 0.65em 0 0.15em;
+  font-size: 11.5pt;
+  break-after: avoid;
+}
+.index-content p {
+  margin: 0.35em 0;
+  font-size: 9.2pt;
+}
+.index-content blockquote {
+  margin: 0.4em 0;
+  padding: 0.25em 0.7em;
+}
+.index-content blockquote p {
+  font-size: 9.2pt;
+}
+.index-content ul,
+.index-content ol {
+  margin: 0.25em 0;
+  padding-left: 1.35em;
+  font-size: 9.2pt;
+}
+.index-content li {
+  margin: 0.04em 0;
+  font-size: 9.2pt;
+}
 
 /* ── Code ── */
 .a-content pre,
@@ -267,6 +296,115 @@ body {
   border: none;
   border-top: 1px solid #d4dce2;
   margin: 1em 0;
+}
+
+/* ── Quiz cards ── */
+.a-content .question-card,
+.index-content .question-card {
+  break-inside: auto;
+  margin: 0.9em 0 1.1em;
+  padding: 0.15em 0 0.15em 0.8em;
+  border: none;
+  border-left: 4px solid #7a9aaa;
+  border-radius: 0;
+  background: transparent;
+}
+.a-content .question-title,
+.index-content .question-title {
+  break-inside: avoid;
+  margin: 0 0 0.6em;
+  color: #2a3840;
+  font-size: 9pt;
+  line-height: 1.55;
+}
+.a-content .quiz-options,
+.index-content .quiz-options {
+  display: block;
+  margin-top: 0.55em;
+}
+.a-content .quiz-option,
+.index-content .quiz-option {
+  appearance: none;
+  break-inside: avoid;
+  display: grid;
+  grid-template-columns: 1.6em 1fr;
+  gap: 0.45em;
+  align-items: start;
+  width: 100%;
+  margin: 0.35em 0;
+  padding: 0.45em 0.55em;
+  border: 1px solid #d4dce2;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #5a6a72;
+  font: inherit;
+  font-size: 8.5pt;
+  line-height: 1.45;
+  text-align: left;
+}
+.a-content .quiz-option-letter,
+.index-content .quiz-option-letter {
+  display: inline-grid;
+  place-items: center;
+  width: 1.35em;
+  height: 1.35em;
+  border: 1px solid #7a9aaa;
+  border-radius: 999px;
+  color: #7a9aaa;
+  font-size: 7pt;
+  font-weight: 700;
+  line-height: 1;
+}
+.a-content .quiz-card[data-answer="A"] .quiz-option[data-option="A"],
+.a-content .quiz-card[data-answer="B"] .quiz-option[data-option="B"],
+.a-content .quiz-card[data-answer="C"] .quiz-option[data-option="C"],
+.a-content .quiz-card[data-answer="D"] .quiz-option[data-option="D"],
+.a-content .quiz-card[data-answer="E"] .quiz-option[data-option="E"],
+.index-content .quiz-card[data-answer="A"] .quiz-option[data-option="A"],
+.index-content .quiz-card[data-answer="B"] .quiz-option[data-option="B"],
+.index-content .quiz-card[data-answer="C"] .quiz-option[data-option="C"],
+.index-content .quiz-card[data-answer="D"] .quiz-option[data-option="D"],
+.index-content .quiz-card[data-answer="E"] .quiz-option[data-option="E"] {
+  border-color: #2f9e63;
+  background: #eef8f2;
+  color: #2a3840;
+}
+.a-content .quiz-card[data-answer="A"] .quiz-option[data-option="A"] .quiz-option-letter,
+.a-content .quiz-card[data-answer="B"] .quiz-option[data-option="B"] .quiz-option-letter,
+.a-content .quiz-card[data-answer="C"] .quiz-option[data-option="C"] .quiz-option-letter,
+.a-content .quiz-card[data-answer="D"] .quiz-option[data-option="D"] .quiz-option-letter,
+.a-content .quiz-card[data-answer="E"] .quiz-option[data-option="E"] .quiz-option-letter,
+.index-content .quiz-card[data-answer="A"] .quiz-option[data-option="A"] .quiz-option-letter,
+.index-content .quiz-card[data-answer="B"] .quiz-option[data-option="B"] .quiz-option-letter,
+.index-content .quiz-card[data-answer="C"] .quiz-option[data-option="C"] .quiz-option-letter,
+.index-content .quiz-card[data-answer="D"] .quiz-option[data-option="D"] .quiz-option-letter,
+.index-content .quiz-card[data-answer="E"] .quiz-option[data-option="E"] .quiz-option-letter {
+  border-color: #2f9e63;
+  background: #2f9e63;
+  color: #ffffff;
+}
+.a-content .quiz-explanation,
+.index-content .quiz-explanation {
+  break-inside: avoid;
+  display: block;
+  margin-top: 0.6em;
+  padding: 0.6em 0.7em;
+  border: 1px solid #d4dce2;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #5a6a72;
+  font-size: 8.5pt;
+  line-height: 1.55;
+}
+.a-content .quiz-explanation p,
+.index-content .quiz-explanation p {
+  margin: 0.25em 0;
+  font-size: 8.5pt;
+}
+.a-content .quiz-answer,
+.index-content .quiz-answer {
+  color: #2f9e63;
+  font-weight: 700;
 }
 
 /* ── Strong / Emphasis ── */

@@ -170,7 +170,7 @@ async function main() {
               continue;
             }
 
-            const sortKey = fileName === "index" ? `${folder}/__00_index` : `${folder}/${fileName}`;
+            const sortKey = pdfSortKey(folder, fileName);
 
             // Determine part title for articles in Part directories
             const partTitle = partTitles.get(folder) || undefined;
@@ -256,6 +256,15 @@ function getCommonPathPrefix(urls: string[]): string {
   const paths = urls.map((u) => new URL(u).pathname);
   paths.sort((a, b) => a.length - b.length);
   return paths[0];
+}
+
+function pdfSortKey(folder: string, fileName: string): string {
+  if (folder === ".") return "00-root/__00_index";
+  if (folder.startsWith("Part")) {
+    return fileName === "index" ? `${folder}/__00_index` : `${folder}/${fileName}`;
+  }
+  const pageKey = fileName === "index" ? "__00_index" : fileName;
+  return `ZZ-${folder}/${pageKey}`;
 }
 
 function extractPartTitles(): Map<string, string> {
