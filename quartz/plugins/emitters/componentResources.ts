@@ -4,6 +4,8 @@ import { QuartzEmitterPlugin } from "../types";
 // @ts-ignore
 import spaRouterScript from "../../components/scripts/spa.inline";
 // @ts-ignore
+import quizScript from "../../components/scripts/quiz.inline";
+// @ts-ignore
 import popoverScript from "../../components/scripts/popover.inline";
 import styles from "../../styles/custom.scss";
 import popoverStyle from "../../components/styles/popover.scss";
@@ -252,6 +254,8 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       document.head.appendChild(rybbitScript);
     `);
   }
+
+  componentResources.afterDOMLoaded.push(quizScript);
 
   if (cfg.enableSPA) {
     componentResources.afterDOMLoaded.push(spaRouterScript);

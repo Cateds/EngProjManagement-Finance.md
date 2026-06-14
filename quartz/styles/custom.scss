@@ -265,3 +265,194 @@ details details {
   margin-left: 1em;
   font-size: 0.95em;
 }
+
+// ── Manual question cards ──
+.question-card {
+  margin: 1.25rem 0 1.5rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--lightgray);
+  border-left: 4px solid var(--secondary);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, var(--highlight), transparent 38%),
+    var(--light);
+  box-shadow: var(--shadow-sm);
+
+  .question-title {
+    margin: 0 0 0.85rem;
+    color: var(--dark);
+    font-size: 1.02rem;
+    line-height: 1.65;
+  }
+
+  ol {
+    margin: 0;
+    padding-left: 0;
+    counter-reset: question-options;
+    list-style: none;
+  }
+
+  li {
+    counter-increment: question-options;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0.65rem;
+    align-items: start;
+    margin: 0.55rem 0;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid color-mix(in srgb, var(--lightgray) 72%, transparent);
+    border-radius: var(--radius-md);
+    background: color-mix(in srgb, var(--light) 86%, var(--highlight));
+    color: var(--darkgray);
+    transition:
+      border-color var(--transition-fast),
+      background var(--transition-fast),
+      transform var(--transition-fast);
+
+    &::before {
+      content: counter(question-options, upper-alpha);
+      display: inline-grid;
+      place-items: center;
+      width: 1.55rem;
+      height: 1.55rem;
+      border: 1px solid var(--secondary);
+      border-radius: 999px;
+      color: var(--secondary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    &:hover {
+      border-color: var(--secondary);
+      background: var(--highlight);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.quiz-card {
+  .quiz-options {
+    display: grid;
+    gap: 0.55rem;
+    margin-top: 0.85rem;
+  }
+
+  .quiz-option {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0.65rem;
+    align-items: start;
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid color-mix(in srgb, var(--lightgray) 72%, transparent);
+    border-radius: var(--radius-md);
+    background: color-mix(in srgb, var(--light) 86%, var(--highlight));
+    color: var(--darkgray);
+    font: inherit;
+    line-height: 1.55;
+    text-align: left;
+    cursor: pointer;
+    transition:
+      border-color var(--transition-fast),
+      background var(--transition-fast),
+      color var(--transition-fast),
+      opacity var(--transition-fast),
+      transform var(--transition-fast);
+
+    &:hover:not(:disabled) {
+      border-color: var(--secondary);
+      background: var(--highlight);
+      transform: translateY(-1px);
+    }
+
+    &:disabled {
+      cursor: default;
+      transform: none;
+    }
+
+    &.correct {
+      border-color: #2f9e63;
+      background: color-mix(in srgb, #2f9e63 16%, var(--light));
+      color: var(--dark);
+
+      .quiz-option-letter {
+        border-color: #2f9e63;
+        background: #2f9e63;
+        color: white;
+      }
+    }
+
+    &.incorrect {
+      border-color: #d94848;
+      background: color-mix(in srgb, #d94848 15%, var(--light));
+      color: var(--dark);
+
+      .quiz-option-letter {
+        border-color: #d94848;
+        background: #d94848;
+        color: white;
+      }
+    }
+
+    &.muted {
+      opacity: 0.62;
+    }
+  }
+
+  .quiz-option-letter {
+    display: inline-grid;
+    place-items: center;
+    width: 1.55rem;
+    height: 1.55rem;
+    border: 1px solid var(--secondary);
+    border-radius: 999px;
+    color: var(--secondary);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .quiz-explanation {
+    max-height: 0;
+    margin-top: 0;
+    padding: 0 1rem;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    opacity: 0;
+    color: var(--darkgray);
+    line-height: 1.65;
+    transition:
+      max-height var(--transition-normal),
+      margin-top var(--transition-normal),
+      padding var(--transition-normal),
+      border-color var(--transition-normal),
+      background var(--transition-normal),
+      opacity var(--transition-normal);
+
+    p {
+      margin: 0.35rem 0;
+    }
+  }
+
+  &.answered .quiz-explanation {
+    max-height: 18rem;
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    border-color: var(--lightgray);
+    background: color-mix(in srgb, var(--light) 88%, var(--highlight));
+    opacity: 1;
+  }
+
+  .quiz-answer {
+    color: #2f9e63;
+    font-weight: 700;
+  }
+}
+
+article > hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px dashed var(--lightgray);
+}

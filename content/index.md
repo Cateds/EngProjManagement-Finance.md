@@ -39,3 +39,8 @@ GitHub 仓库链接在 [EngProjManagement-Finance.md](https://github.com/Cateds/
   - [[lec.14|Lecture.14 什么是公司？]]
   - [[lec.15|Lecture.15 公司的结构]]
   - [[lec.16|Lecture.16 公司战略与工程职业]]
+
+## 其他内容
+
+- **[[Others/index|杂项]]**
+  - [[questions.md|PPT 选择题汇总]]
