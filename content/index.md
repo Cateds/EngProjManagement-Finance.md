@@ -44,3 +44,4 @@ GitHub 仓库链接在 [EngProjManagement-Finance.md](https://github.com/Cateds/
 
 - **[[Others/index|杂项]]**
   - [[questions.md|PPT 选择题汇总]]
+  - [[sample1.md|试卷题目样例 1]]
