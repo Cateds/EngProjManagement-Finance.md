@@ -320,7 +320,7 @@ $$
 
 **(b) Machine TCO**
 
-Power costs over five years: `0.500, 0.550, 0.605, 0.666, 0.732 M RMB`. Total power cost = `3.05255 M RMB`. Maintenance total = `5 M RMB`. Including purchase cost:
+Power costs over five years: `0.500, 0.550, 0.605, 0.6655, 0.73205 M RMB`. Total power cost = `3.05255 M RMB`. Maintenance total = `5 M RMB`. Including purchase cost:
 
 $$
 TCO = 10 + 5 + 3.05255 = 18.05255M\ \text{RMB}
@@ -405,20 +405,20 @@ Process changes over time: **Control chart**.
 For the yield data:
 
 $$
-\bar{x}=98.415\%,\quad s\approx1.205\%
+\bar{x}\approx98.4147\%,\quad s\approx1.20455\%
 $$
 
 PDF 题干没有指定 `2 * sigma`，因此这里按常规 control chart 使用 `3 * sigma` 控制界限：
 
 $$
-UCL=98.415+3(1.205)=102.028\%
+UCL\approx98.4147+3(1.20455)=102.028\%
 $$
 
 $$
-LCL=98.415-3(1.205)=94.801\%
+LCL\approx98.4147-3(1.20455)=94.801\%
 $$
 
-Sample 6 has yield `94.32%`, which is below LCL. Therefore, the process shows uncontrolled variation and is unstable. On the plot, mark the central line at `98.415%`, UCL at `102.028%`, LCL at `94.801%`, and highlight sample 6 as an out-of-control point.
+Sample 6 has yield `94.32%`, which is below LCL. Therefore, the process shows uncontrolled variation and is unstable. On the plot, mark the central line at `98.4147%`, UCL at `102.028%`, LCL at `94.801%`, and highlight sample 6 as an out-of-control point.
 
 </details>
 

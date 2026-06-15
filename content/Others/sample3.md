@@ -24,7 +24,7 @@ title: 试卷题目样例 3
 
 <div class="quiz-explanation">
 <p><strong class="quiz-answer">参考答案：E</strong></p>
-<p>项目管理用于定义项目、估算成本、识别风险并配置资源。进度不是“计划完成后只跟踪一次”，而是持续监控和控制。</p>
+<p>项目管理用于定义项目、估算成本、识别风险并配置资源。第 5 条中的 <em>only once the plan is made</em> 可理解为“只有计划制定后才跟踪”或“计划完成后只跟踪一次”，但无论哪种读法都过于片面：项目进度需要在项目生命周期中持续监控和控制，而不是把 schedule tracking 当作计划完成后的单独动作。</p>
 </div>
 
 </div>
@@ -52,11 +52,11 @@ title: 试卷题目样例 3
 
 ---
 
-<div class="question-card quiz-card" data-answer="B">
+<div class="question-card quiz-card" data-answer="A">
 
 <p class="question-title"><strong>(1.3)</strong> If a company has an organisational structure as shown below, it is called: <strong>[2]</strong></p>
 
-<p><img src="../Assets/sample-exam/sample3-q1-3-matrix-structure.png" alt="Matrix organizational structure diagram"></p>
+<p><img src="../Assets/sample-exam/sample3-q1-3-matrix-structure.png" alt="Team-based organizational structure diagram"></p>
 
 <div class="quiz-options">
 <button class="quiz-option" data-option="A" type="button"><span class="quiz-option-letter">A</span><span>A Team-Based Structure</span></button>
@@ -67,8 +67,8 @@ title: 试卷题目样例 3
 </div>
 
 <div class="quiz-explanation">
-<p><strong class="quiz-answer">参考答案：B</strong></p>
-<p>图中职能部门与产品/制造单元之间存在交叉汇报和协作关系，属于 matrix structure。</p>
+<p><strong class="quiz-answer">参考答案：A</strong></p>
+<p>图中 CEO 下方有 Engineering、Sales &amp; Marketing、Product Design、Research &amp; Development 等职能部门，但实际工作通过下方的产品团队/制造单元组织，每个团队包含 product team manager 和 team members，并横向连接多个职能部门。因此更符合 team-based / group-based structure，而不是典型 matrix structure。</p>
 </div>
 
 </div>

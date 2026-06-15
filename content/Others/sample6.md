@@ -298,7 +298,23 @@ You are a project manager working on China's high-speed railway. A major new pie
 <details>
 <summary>展示参考答案</summary>
 
-Using the given table, the CPM results are:
+One acceptable activity-on-node network diagram is:
+
+```text
+0(0) -> 1(3)
+1(3) -> 2(4), 3(3)
+2(4) -> 4(1)
+3(3), 4(1) -> 5(2)
+5(2) -> 6(4), 7(3), 8(5)
+6(4), 7(3), 8(5) -> 9(1)
+9(1) -> 10(4), 11(5)
+10(4), 11(5) -> 12(2), 14(2)
+12(2) -> 13(1)
+13(1), 14(2) -> 15(1)
+15(1) -> 16(1) -> 17(1) -> 18(1) -> 19(0)
+```
+
+Using the network, the CPM results are:
 
 | Task | ES | EF | LS | LF | Float |
 | ---: | ---: | ---: | ---: | ---: | ---: |
