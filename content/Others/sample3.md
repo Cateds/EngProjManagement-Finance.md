@@ -2,7 +2,7 @@
 title: 试卷题目样例 3
 ---
 
-> 题源：`content/Ref/Sample Exam Questions.pdf` 的 `SAMPLE SET 3`。
+> 题源：`Sample Exam Questions.pdf` 的 `SAMPLE SET 3`。
 >
 > 参考答案与解析由 GPT-5.5 辅助生成，并结合本站课程笔记与计算复核整理；**非官方答案，仅供参考**。若与课堂讲解或官方答案冲突，以官方答案为准。
 
@@ -33,7 +33,7 @@ title: 试卷题目样例 3
 
 <div class="question-card quiz-card" data-answer="D">
 
-<p class="question-title"><strong>(1.2)</strong> In a Profit and Loss statement, Earnings before Interest, Tax, Depreciation, and Amortisation (EBITA/EBITDA in this simplified wording) is equal to: <strong>[2]</strong></p>
+<p class="question-title"><strong>(1.2)</strong> In a Profit and Loss statement, Earnings before Interest, Tax, Depreciation, and Amortisation is equal to: <strong>[2]</strong></p>
 
 <div class="quiz-options">
 <button class="quiz-option" data-option="A" type="button"><span class="quiz-option-letter">A</span><span>Total Sales minus Cost of Sales</span></button>
@@ -45,7 +45,7 @@ title: 试卷题目样例 3
 
 <div class="quiz-explanation">
 <p><strong class="quiz-answer">参考答案：D</strong></p>
-<p>课程简化口径下，EBITDA/EBITA 可视作 gross profit 扣除经营费用后、尚未扣除利息和税等项目的收益。</p>
+<p>PDF 题干标签写作 EBITA，但完整展开包含 depreciation and amortisation，更接近 EBITDA。按课程简化口径，可视作 gross profit 扣除经营费用后、尚未扣除利息和税等项目的收益。</p>
 </div>
 
 </div>
@@ -356,6 +356,8 @@ Project duration is **28 days**.
 **(c) Gantt chart answer**
 
 在 Gantt chart 中，把每个 task 按 ES 到 EF 绘制。关键任务标红或加粗，非关键任务显示 float：Task 3 has 2 days float, Task 6 has 1 day, Task 7 has 2 days, Task 10 has 1 day, Task 14 has 5 days.
+
+注意：以上严格按 PDF 表格的 predecessors 计算。PDF 中 Task 14 “Assemble Jib” 没有作为 Task 15 的 predecessor，因此它在该计算中是一个非关键终端活动。按工程逻辑，“Assemble Jib” 很可能应先于 “Install Jib”；若把 Task 14 也作为 Task 15 的 predecessor，则项目总工期仍为 28 天，但 Task 14 的 float 会变为 1 天。
 
 **(d) Change to Task 8 dependency**
 

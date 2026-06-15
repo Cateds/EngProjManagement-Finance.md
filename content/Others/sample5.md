@@ -2,7 +2,7 @@
 title: 试卷题目样例 5
 ---
 
-> 题源：`content/Ref/Sample Exam Questions.pdf` 的 `SAMPLE SET 5`。
+> 题源：`Sample Exam Questions.pdf` 的 `SAMPLE SET 5`。
 >
 > 参考答案与解析由 GPT-5.5 辅助生成，并结合本站课程笔记与计算复核整理；**非官方答案，仅供参考**。若与课堂讲解或官方答案冲突，以官方答案为准。
 
@@ -266,6 +266,24 @@ title: 试卷题目样例 5
 
 ### Q2 Discounted Cash Flow
 
+As a young entrepreneur, you would like to guarantee a healthy total cost of ownership via evaluating the net present value of your young company while utilising discounted cash flow analysis.
+
+**(a)** Your company is designing a new product that will take three years to design, fabricate, and build. Expenses are `1,000,000 RMB` per year and will increase with an inflation rate of `5%` annually. How much must your company quote the customer for delivery in three years if it wants to cover expenses and earn a net profit, in today's equivalent currency, of `100,000 RMB`? **[3]**
+
+**(b)** Your company would like to purchase a new machine with purchase price `10 M RMB` and lifetime `5 years`. The machine requires annual maintenance cost `1 M RMB` and annual power cost `0.5 M RMB`. All costs are fixed, with inflation of `10%` applied to power only after year 1.
+
+(i) Demonstrate the total projected costs over the lifetime. **[3]**
+
+(ii) Analyse the total cost of ownership over the lifetime. **[4]**
+
+**(c)** Your company is considering setting up a large assembly facility in Chengdu. Initial setup cost is `6,398 M RMB`. Forecast net income is: Y1 `1,400 M`, Y2 `1,450 M`, Y3 `1,550 M`, Y4 `1,625 M`, Y5 `1,480 M`.
+
+(i) Calculate projected payback time to the nearest month. **[5]**
+
+(ii) Calculate NPV using a discount factor of `5%`. **[7]**
+
+(iii) Comment on attractiveness. **[3]**
+
 <details>
 <summary>展示参考答案</summary>
 
@@ -285,6 +303,12 @@ $$
 
 #### Q3(p) DFM and Sustainability
 
+DFM is the process of designing components for ease of manufacturing high-quality products at a lower cost.
+
+(viii) The product development cycle consists of initial design, final design, fabrication, production, and product launch. Which stage is more effective in DFM regarding the impact and cost of changes? **[3]**
+
+(ix) Sustainability can balance three main pillars. List any two of these pillars. **[2]**
+
 <details>
 <summary>展示参考答案</summary>
 
@@ -295,6 +319,14 @@ Any two sustainability pillars: **environmental**, **economic**, **social**.
 </details>
 
 #### Q3(q) Quality Control
+
+The goal of Quality Control (QC) is to identify defects after a product is developed but before it is released to production. The seven basic quality-control tools can be used to manage product or process quality effectively.
+
+(vii) List any two of the 7-QC tools. **[2]**
+
+(viii) A company that produces electronic devices is experiencing a high rate of product returns due to defects. How might a cause-effect diagram be used to identify the root causes of these defects? **[4]**
+
+(ix) The cost of quality can be categorized as Prevention Cost, Appraisal Cost, Internal Failure Cost, and External Failure Cost. Classify quality-related training, and product recall and warranty repairs. **[2]**
 
 <details>
 <summary>展示参考答案</summary>
@@ -313,6 +345,22 @@ Cost classification:
 </details>
 
 #### Q3(r) Robust Design
+
+Robust Design is an engineering methodology for improving productivity during research and development so that high-quality products can be produced quickly and at low cost.
+
+(v) From the viewpoint of robust design, an engineering design problem can be optimized through three main steps. List any two of these steps. **[2]**
+
+(vi) The product response is denoted by `y`. Three classes of parameters, shown in Figure Q3(c) as `Z`, `M`, and `X`, can influence the response or quality characteristic. List any two of them. **[2]**
+
+(vii) A product engineer collected 10 observations for a nominal-the-best quality characteristic. The target point is `8.5`; use Taguchi loss with constant `k = 1` and compute the loss for the data set. **[3]**
+
+| Observation | Measurement | Observation | Measurement |
+| --- | ---: | --- | ---: |
+| 1 | 8.100 | 6 | 8.350 |
+| 2 | 8.900 | 7 | 8.250 |
+| 3 | 8.450 | 8 | 8.680 |
+| 4 | 9.250 | 9 | 8.900 |
+| 5 | 8.860 | 10 | 9.050 |
 
 <p><img src="../Assets/sample-exam/sample5-q3c-parameter-diagram.png" alt="Robust design parameter diagram"></p>
 
@@ -358,6 +406,12 @@ $$
 
 #### Q3(s) Six Sigma and Process Capability
 
+Six Sigma measures a process in terms of defects; at the six-sigma level, there are 3.4 defects per million opportunities.
+
+(iii) What is Critical-to-Quality (CTQ)? **[2]**
+
+(iv) A manufacturing process produces a new product with specified length `20 ± 1 mm`. The process has mean diameter `19.8 mm` and standard deviation `0.2 mm`. Calculate the process capability index `Cpk`. **[3]**
+
 <details>
 <summary>展示参考答案</summary>
 
@@ -386,6 +440,20 @@ ABC manufacturing has annual capacity `45,000` routers. Cost breakdown:
 | Total | 1,237,500 |
 
 Outside supplier price is `27.5 RMB` per router.
+
+The fixed overhead cost will **not** be avoided if routers are purchased from the outside supplier because the company has no other use for the vacant production facilities. Later, assume the manager can rent out the facilities for `570,000 RMB` per year.
+
+(a) Derive the theoretical break-even point relationship. **[3]**
+
+(b) Compare the cost of making internally on a per-router basis with buying externally. Should the company purchase from the outside supplier? **[5]**
+
+(c) Include the facility rental impact. Does this change the recommendation? **[5]**
+
+(d) If routers can be sold for `40.00 RMB` each, draw a production cost and sales revenue table for quantities `10,000 -> 30,000` in `5,000` increments. **[5]**
+
+(e) At full capacity `45,000` routers per year with price `40.00 RMB`, calculate profit and safety margin. **[3]**
+
+(f) Draw a break-even graph showing `TC`, `VC`, `FC`, and `REV` against quantity. Calculate and mark the break-even point. **[5]**
 
 <details>
 <summary>展示参考答案</summary>

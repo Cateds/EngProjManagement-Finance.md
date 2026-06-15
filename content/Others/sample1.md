@@ -2,7 +2,7 @@
 title: 试卷题目样例 1
 ---
 
-> 题源：`content/Ref/Sample Exam Questions.pdf` 的 `SAMPLE SET 1`。
+> 题源：`Sample Exam Questions.pdf` 的 `SAMPLE SET 1`。
 >
 > 参考答案与解析由 GPT-5.5 辅助生成，并结合本站课程笔记与计算复核整理；**非官方答案，仅供参考**。若与课堂讲解或官方答案冲突，以官方答案为准。标注“需人工复核”的题目表示存在题干、计算口径或官方预期答案的不确定性。
 
@@ -291,10 +291,10 @@ A company is designing a new household appliance and is considering two possible
 
 **(i) DFM 比较**
 
-| 设计 | 优点 | 缺点 |
-| --- | --- | --- |
-| Design A: 5 个独立零件 | 零件可单独替换；某些零件可复用；维修和升级更方便；模具或单件制造风险较低 | 零件数量多；装配步骤多；装配时间和人工成本高；误装、漏装和公差叠加风险更高；库存和供应链更复杂 |
-| Design B: 单个模制件 | 零件数减少；装配步骤减少；制造和装配更快；尺寸更小；质量一致性更好；总体 DFM 更优 | 初始模具成本可能较高；设计修改更困难；某一局部损坏可能导致整个部件报废；复用和维修性较差 |
+| 设计                   | 优点                                                                              | 缺点                                                                                           |
+| ---------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Design A: 5 个独立零件 | 零件可单独替换；某些零件可复用；维修和升级更方便；模具或单件制造风险较低          | 零件数量多；装配步骤多；装配时间和人工成本高；误装、漏装和公差叠加风险更高；库存和供应链更复杂 |
+| Design B: 单个模制件   | 零件数减少；装配步骤减少；制造和装配更快；尺寸更小；质量一致性更好；总体 DFM 更优 | 初始模具成本可能较高；设计修改更困难；某一局部损坏可能导致整个部件报废；复用和维修性较差       |
 
 从 DFM 角度，若产品批量较大且设计稳定，Design B 通常更符合简化零件、减少装配和降低制造成本的原则。
 
@@ -314,20 +314,20 @@ Design B 主要对应 **Reduce**，因为单一模制件减少零件数量、材
 
 #### Q2(b) Control Chart
 
-The night shift operator recorded twenty current (mA) samples during electronic circuit testing. Evaluate whether the process is under control by utilizing a control chart, considering `2 * Sigma`. **[7]**
+The night shift operator recorded twenty current (mA) samples during electronic circuit testing. Evaluate whether the process is under control by utilizing a control chart, considering `2 * Sigma`. Create a plot that clearly shows the sample points, central line, upper control limit (UCL), and lower control limit (LCL). **[7]**
 
-| #Sample | Current (mA) | #Sample | Current (mA) |
-| --- | ---: | --- | ---: |
-| 1 | 510 | 11 | 505 |
-| 2 | 516 | 12 | 511 |
-| 3 | 500 | 13 | 500 |
-| 4 | 495 | 14 | 498 |
-| 5 | 505 | 15 | 501 |
-| 6 | 500 | 16 | 500 |
-| 7 | 510 | 17 | 490 |
-| 8 | 505 | 18 | 505 |
-| 9 | 500 | 19 | 507 |
-| 10 | 499 | 20 | 500 |
+| Sample | Current (mA) | Sample | Current (mA) |
+| ------ | -----------: | ------ | -----------: |
+| 1      |          510 | 11     |          505 |
+| 2      |          516 | 12     |          511 |
+| 3      |          500 | 13     |          500 |
+| 4      |          495 | 14     |          498 |
+| 5      |          505 | 15     |          501 |
+| 6      |          500 | 16     |          500 |
+| 7      |          510 | 17     |          490 |
+| 8      |          505 | 18     |          505 |
+| 9      |          500 | 19     |          507 |
+| 10     |          499 | 20     |          500 |
 
 <details>
 <summary>展示参考答案</summary>
@@ -354,11 +354,13 @@ $$
 \mathrm{LCL} = \bar{x} - 2s = 502.85 - 12.092 \approx 490.76\ \text{mA}
 $$
 
-| 指标 | 数值 |
-| --- | ---: |
+| 指标         |      数值 |
+| ------------ | --------: |
 | Central Line | 502.85 mA |
-| UCL | 514.94 mA |
-| LCL | 490.76 mA |
+| UCL          | 514.94 mA |
+| LCL          | 490.76 mA |
+
+作图时，横轴为 sample number `1-20`，纵轴为 current (mA)。把 20 个样本点依次连线，并画三条水平线：CL = `502.85 mA`、UCL = `514.94 mA`、LCL = `490.76 mA`。样本 2 和样本 17 应在图上突出标记为越界点。
 
 样本 2 的电流为 516 mA，高于 UCL；样本 17 的电流为 490 mA，低于 LCL。因此该过程存在超出控制界限的点，不能认为过程处于统计受控状态。
 
@@ -396,6 +398,8 @@ C_{pk}=\min(0.119, 0.433) = 0.119
 $$
 
 结论：`Cp < 1` 表明过程自然波动范围大于规格范围，过程能力不足；`Cpk` 更低，说明过程均值还偏向 USL。该制造过程不能稳定满足 `500 ± 5 mA` 的规格，需要降低变异并把均值拉回目标值 500 mA。
+
+注意：Q2(b) 已显示该过程不是统计受控过程，因此这里的 `Cp/Cpk` 只能作为描述性/初步计算。实际判断过程能力前，应先消除特殊原因并让过程稳定。
 
 </details>
 
@@ -476,12 +480,12 @@ $$
 (iii) Assume an electronic product engineer has collected 10 observations for a specific product's quality characteristic, which is nominally the best at a target value of 8.5. The engineer uses the Taguchi loss function where `k = 1`. Given Table Q3(a), compute the Taguchi loss function for each observation and determine the total loss. **[3]**
 
 | Observation | Measurement | Observation | Measurement |
-| --- | ---: | --- | ---: |
-| 1 | 8.10 | 6 | 8.35 |
-| 2 | 8.90 | 7 | 8.25 |
-| 3 | 8.45 | 8 | 8.68 |
-| 4 | 9.25 | 9 | 8.90 |
-| 5 | 8.86 | 10 | 9.05 |
+| ----------- | ----------: | ----------- | ----------: |
+| 1           |        8.10 | 6           |        8.35 |
+| 2           |        8.90 | 7           |        8.25 |
+| 3           |        8.45 | 8           |        8.68 |
+| 4           |        9.25 | 9           |        8.90 |
+| 5           |        8.86 | 10          |        9.05 |
 
 <details>
 <summary>展示参考答案</summary>
@@ -492,18 +496,18 @@ $$
 L(y)=k(y-m)^2=(y-8.5)^2
 $$
 
-| Observation | y | Loss |
-| --- | ---: | ---: |
-| 1 | 8.10 | 0.1600 |
-| 2 | 8.90 | 0.1600 |
-| 3 | 8.45 | 0.0025 |
-| 4 | 9.25 | 0.5625 |
-| 5 | 8.86 | 0.1296 |
-| 6 | 8.35 | 0.0225 |
-| 7 | 8.25 | 0.0625 |
-| 8 | 8.68 | 0.0324 |
-| 9 | 8.90 | 0.1600 |
-| 10 | 9.05 | 0.3025 |
+| Observation |    y |   Loss |
+| ----------- | ---: | -----: |
+| 1           | 8.10 | 0.1600 |
+| 2           | 8.90 | 0.1600 |
+| 3           | 8.45 | 0.0025 |
+| 4           | 9.25 | 0.5625 |
+| 5           | 8.86 | 0.1296 |
+| 6           | 8.35 | 0.0225 |
+| 7           | 8.25 | 0.0625 |
+| 8           | 8.68 | 0.0324 |
+| 9           | 8.90 | 0.1600 |
+| 10          | 9.05 | 0.3025 |
 
 总损失：
 
@@ -545,6 +549,19 @@ Project schedule management includes the processes required to manage the timely
 
 <p><img src="../Assets/sample-exam/sample1-q3b-network.png" alt="CPM network diagram for Sample 1 Q3(b)"></p>
 
+Text version of the activity data from Figure Q3(b):
+
+| Activity | Duration | Predecessors |
+| -------- | -------: | ------------ |
+| A        |        7 | -            |
+| B        |       15 | A            |
+| C        |       10 | A            |
+| D        |       12 | C            |
+| F        |       17 | B            |
+| G        |        6 | D            |
+| H        |       11 | D, F         |
+| I        |       13 | G, H         |
+
 (i) Perform the forward pass analysis through the schedule network and compute Early Start and Early Finish dates for all activities. **[5]**
 
 (ii) Perform the backward pass analysis through the schedule network and compute Late Start and Late Finish dates for all activities. **[5]**
@@ -559,54 +576,54 @@ Project schedule management includes the processes required to manage the timely
 活动工期和依赖关系按图读取如下：
 
 | Activity | Duration | Predecessors |
-| --- | ---: | --- |
-| A | 7 | - |
-| B | 15 | A |
-| C | 10 | A |
-| D | 12 | C |
-| F | 17 | B |
-| G | 6 | D |
-| H | 11 | D, F |
-| I | 13 | G, H |
+| -------- | -------: | ------------ |
+| A        |        7 | -            |
+| B        |       15 | A            |
+| C        |       10 | A            |
+| D        |       12 | C            |
+| F        |       17 | B            |
+| G        |        6 | D            |
+| H        |       11 | D, F         |
+| I        |       13 | G, H         |
 
 Forward pass：
 
-| Activity | ES | EF |
-| --- | ---: | ---: |
-| A | 0 | 7 |
-| B | 7 | 22 |
-| C | 7 | 17 |
-| D | 17 | 29 |
-| F | 22 | 39 |
-| G | 29 | 35 |
-| H | 39 | 50 |
-| I | 50 | 63 |
+| Activity |  ES |  EF |
+| -------- | --: | --: |
+| A        |   0 |   7 |
+| B        |   7 |  22 |
+| C        |   7 |  17 |
+| D        |  17 |  29 |
+| F        |  22 |  39 |
+| G        |  29 |  35 |
+| H        |  39 |  50 |
+| I        |  50 |  63 |
 
 Backward pass：
 
-| Activity | LS | LF |
-| --- | ---: | ---: |
-| A | 0 | 7 |
-| B | 7 | 22 |
-| C | 17 | 27 |
-| D | 27 | 39 |
-| F | 22 | 39 |
-| G | 44 | 50 |
-| H | 39 | 50 |
-| I | 50 | 63 |
+| Activity |  LS |  LF |
+| -------- | --: | --: |
+| A        |   0 |   7 |
+| B        |   7 |  22 |
+| C        |  17 |  27 |
+| D        |  27 |  39 |
+| F        |  22 |  39 |
+| G        |  44 |  50 |
+| H        |  39 |  50 |
+| I        |  50 |  63 |
 
 Total float：
 
 | Activity | Total Float |
-| --- | ---: |
-| A | 0 |
-| B | 0 |
-| C | 10 |
-| D | 10 |
-| F | 0 |
-| G | 15 |
-| H | 0 |
-| I | 0 |
+| -------- | ----------: |
+| A        |           0 |
+| B        |           0 |
+| C        |          10 |
+| D        |          10 |
+| F        |           0 |
+| G        |          15 |
+| H        |           0 |
+| I        |           0 |
 
 Critical Path：
 
@@ -643,17 +660,17 @@ $$
 1.2M \times 675 = 810M\ \text{RMB}
 $$
 
-| Scenario | Lens purchase cost | Fixed overhead | Rental income | Annual equivalent cost |
-| --- | ---: | ---: | ---: | ---: |
-| Facilities rented out | 810 M | 39 M | -2 M | 847 M RMB |
-| Rental not renewed | 810 M | 39 M | 0 | 849 M RMB |
+| Scenario              | Lens purchase cost | Fixed overhead | Rental income | Annual equivalent cost |
+| --------------------- | -----------------: | -------------: | ------------: | ---------------------: |
+| Facilities rented out |              810 M |           39 M |          -2 M |              847 M RMB |
+| Rental not renewed    |              810 M |           39 M |             0 |              849 M RMB |
 
 Equivalent cost per lens:
 
-| Scenario | Cost per lens |
-| --- | ---: |
+| Scenario              |            Cost per lens |
+| --------------------- | -----------------------: |
 | Facilities rented out | 847M / 1.2M = 705.83 RMB |
-| Rental not renewed | 849M / 1.2M = 707.50 RMB |
+| Rental not renewed    | 849M / 1.2M = 707.50 RMB |
 
 </details>
 
@@ -676,10 +693,10 @@ $$
 1.2M \times 667.5 + 39M = 801M + 39M = 840M\ \text{RMB}
 $$
 
-| Option | Variable / purchase cost | Fixed overhead | Rental income | Total annual cost |
-| --- | ---: | ---: | ---: | ---: |
-| Buy, rental not renewed | 810 M | 39 M | 0 | 849 M RMB |
-| Make internally | 801 M | 39 M | 0 | 840 M RMB |
+| Option                  | Variable / purchase cost | Fixed overhead | Rental income | Total annual cost |
+| ----------------------- | -----------------------: | -------------: | ------------: | ----------------: |
+| Buy, rental not renewed |                    810 M |           39 M |             0 |         849 M RMB |
+| Make internally         |                    801 M |           39 M |             0 |         840 M RMB |
 
 Internal manufacturing saves:
 
@@ -717,13 +734,13 @@ $$
 where `Q` is the number of headsets.
 
 | Q (M headsets) | Total Cost (M RMB) | Revenue (M RMB) | Profit (M RMB) |
-| ---: | ---: | ---: | ---: |
-| 0.0 | 39.0 | 0.0 | -39.0 |
-| 0.2 | 306.0 | 282.6 | -23.4 |
-| 0.4 | 573.0 | 565.2 | -7.8 |
-| 0.6 | 840.0 | 847.8 | 7.8 |
-| 0.8 | 1107.0 | 1130.4 | 23.4 |
-| 1.0 | 1374.0 | 1413.0 | 39.0 |
+| -------------: | -----------------: | --------------: | -------------: |
+|            0.0 |               39.0 |             0.0 |          -39.0 |
+|            0.2 |              306.0 |           282.6 |          -23.4 |
+|            0.4 |              573.0 |           565.2 |           -7.8 |
+|            0.6 |              840.0 |           847.8 |            7.8 |
+|            0.8 |             1107.0 |          1130.4 |           23.4 |
+|            1.0 |             1374.0 |          1413.0 |           39.0 |
 
 </details>
 

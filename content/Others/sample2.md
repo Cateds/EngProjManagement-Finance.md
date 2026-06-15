@@ -2,7 +2,7 @@
 title: 试卷题目样例 2
 ---
 
-> 题源：`content/Ref/Sample Exam Questions.pdf` 的 `SAMPLE SET 2`。
+> 题源：`Sample Exam Questions.pdf` 的 `SAMPLE SET 2`。
 >
 > 参考答案与解析由 GPT-5.5 辅助生成，并结合本站课程笔记与计算复核整理；**非官方答案，仅供参考**。若与课堂讲解或官方答案冲突，以官方答案为准。标注“需人工复核”的题目表示存在题干、计算口径或官方预期答案的不确定性。
 
@@ -313,6 +313,13 @@ In a circuit board assembly line, incorrect signal outputs are increasing during
 
 图示时可把“Incorrect signal output”放在鱼头，四类原因作为主骨，每类下列两个具体原因。答案重点是分类合理、原因具体、能与信号测试失败建立因果关系。
 
+```text
+Machines  ── calibration drift; worn soldering/placement machine
+Materials ── defective components; poor PCB/solder/connector quality
+Methods   ── wrong test program; unclear/outdated work instruction  >  Incorrect signal output
+Manpower  ── insufficient training; fatigue or procedure violation
+```
+
 </details>
 
 #### Q2(f) BCR, WBS, Risk
@@ -343,6 +350,16 @@ Its purpose is to judge whether benefits justify costs and to compare investment
 #### Q2(g) Conflict Management
 
 Identify the conflict resolution strategy used in each scenario and determine whether each side experiences a win or a loss. **[5]**
+
+(i) Two team members are arguing over which software tool to use for tracking project progress. The project manager sees that the argument is taking too much time and postpones the discussion indefinitely, hoping the issue will resolve itself.
+
+(ii) A senior stakeholder dislikes a minor feature in the project, but the project manager knows that arguing over it could damage the relationship. To maintain harmony, the manager agrees to remove the feature, even though it was beneficial.
+
+(iii) The marketing and development teams disagree on the launch date. Developers need more time for testing, while marketing wants to meet a campaign deadline. Both teams work together to adjust the scope so essential features are tested while still hitting the deadline.
+
+(iv) A critical bug is delaying the project. The lead engineer insists on a lengthy detailed fix, while the project manager, under pressure from upper management, orders an immediate workaround to meet the deadline.
+
+(v) Two departments are fighting over resource allocation. One wants five additional developers while the other needs three. The project manager negotiates, giving each team some of what they want: one team gets three developers and the other gets two.
 
 <details>
 <summary>展示参考答案</summary>
@@ -481,9 +498,9 @@ $$
 | --- | ---: |
 | 1 | 1,333.33 |
 | 2 | 1,315.19 |
-| 3 | 1,339.25 |
-| 4 | 1,337.19 |
-| 5 | 1,159.01 |
+| 3 | 1,338.95 |
+| 4 | 1,336.89 |
+| 5 | 1,159.62 |
 
 Total discounted income is about `6,483.98 M RMB`, so:
 

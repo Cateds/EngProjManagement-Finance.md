@@ -2,7 +2,7 @@
 title: 试卷题目样例 6
 ---
 
-> 题源：`content/Ref/Sample Exam Questions.pdf` 的 `SAMPLE SET 6`。
+> 题源：`Sample Exam Questions.pdf` 的 `SAMPLE SET 6`。
 >
 > 参考答案与解析由 GPT-5.5 辅助生成，并结合本站课程笔记与计算复核整理；**非官方答案，仅供参考**。若与课堂讲解或官方答案冲突，以官方答案为准。
 
@@ -266,6 +266,35 @@ title: 试卷题目样例 6
 
 #### Q2(a-b) Tower Crane CPM
 
+You are a project manager working on China's high-speed railway. A major new piece of electrical equipment must be installed at Chengdu's new airport station using a tower crane. The collected tasks, durations, and predecessors are:
+
+| Task | Description | Duration (days) | Predecessors |
+| ---: | --- | ---: | --- |
+| 0 | Project Start (Milestone) | 0 | - |
+| 1 | Specify Crane | 3 | 0 |
+| 2 | Survey Site | 4 | 1 |
+| 3 | Survey Power Supply | 3 | 1 |
+| 4 | Select Site | 1 | 2 |
+| 5 | Order Tower Crane | 2 | 3, 4 |
+| 6 | Arrange Transport | 4 | 5 |
+| 7 | Order Mobile Erector Crane | 3 | 5 |
+| 8 | Install Concrete Plinth | 5 | 5 |
+| 9 | Confirm Site Access | 1 | 6, 7, 8 |
+| 10 | Get Mobile Erector Crane on Site | 4 | 9 |
+| 11 | Crane Parts on Site | 5 | 9 |
+| 12 | Install Crane Base | 2 | 10, 11 |
+| 13 | Install Tower & Crane Head | 1 | 12 |
+| 14 | Assemble Jib | 2 | 10, 11 |
+| 15 | Install Jib | 1 | 13, 14 |
+| 16 | Install counterweight | 1 | 15 |
+| 17 | Apply Crane Power | 1 | 16 |
+| 18 | Test Crane | 1 | 17 |
+| 19 | Project end | 0 | 18 |
+
+(a) Show the information on a network diagram showing each task duration and the interdependencies. **[8]**
+
+(b) Using the network diagram: list the critical path tasks in order, calculate the overall project duration, and calculate the new duration if Task 8 cannot start until Task 7 is complete. **[7]**
+
 <details>
 <summary>展示参考答案</summary>
 
@@ -364,6 +393,14 @@ $$
 
 #### Q3(t) DFM and Process Capability
 
+Design for Manufacturing (DFM) includes principles such as Simplicity, Standardization, Tolerance, Material Selection, Automation, and Process Integration.
+
+(i) In Six Sigma, explain how Poka-yoke can contribute to process improvement. Provide an example of a Poka-yoke mechanism in an LED laboratory setup. **[4]**
+
+(ii) A manufacturer produces resistors with target resistance `12 ohms` and tolerance `±2 ohms`. A sample has average resistance `12.2 ohms` and standard deviation `0.5 ohms`. Evaluate `Cp` and `Cpk`. **[4]**
+
+(iii) Name any two of the 4R principles for circular economy and sustainable products. **[2]**
+
 <details>
 <summary>展示参考答案</summary>
 
@@ -379,13 +416,25 @@ $$
 C_{pk}=\min\left(\frac{14-12.2}{1.5},\frac{12.2-10}{1.5}\right)=\min(1.20,1.47)=1.20
 $$
 
-The process is reasonably capable, but the mean is slightly high, so the upper specification side limits Cpk.
+`Cp = 1.33` suggests the spread is at the common minimum capability target if the process were centered. However, `Cpk = 1.20` is below the common `1.33` target because the mean is shifted upward toward the USL, so the process should be re-centered and monitored.
 
 **4Rs:** Any two of Reduce, Reuse, Recycle, Repair.
 
 </details>
 
 #### Q3(u) Project Management Short Questions
+
+Project management is the application of knowledge, skills, tools, and techniques to project activities to meet project requirements.
+
+(iv) Project managers should have three key skill sets in the Talent Triangle. Select and briefly explain any two. **[4]**
+
+(v) What is the term used to describe developing a detailed description of the project and product, often represented as a hierarchical decomposition of project scope? **[1]**
+
+(vi) Sarah is overseeing a new electronic device prototype. The most likely duration is `12 weeks`; best case reduces duration by `3 weeks`; pessimistic delay extends duration by `4 weeks`. Using three-point estimating, calculate expected duration using Triangular and Beta distributions separately, and determine the standard deviation of these estimates. **[4]**
+
+(vii) You manage a team of `6` members. In the next phase, `3` members are added and `2` leave. How many new communication channels need to be added? **[3]**
+
+(viii) In conflict management, identify which method creates a win-win situation, which results in lose-lose, and which leaves neither side gaining nor losing. **[3]**
 
 <details>
 <summary>展示参考答案</summary>

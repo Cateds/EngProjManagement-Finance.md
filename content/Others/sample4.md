@@ -2,7 +2,7 @@
 title: 试卷题目样例 4
 ---
 
-> 题源：`content/Ref/Sample Exam Questions.pdf` 的 `SAMPLE SET 4`。
+> 题源：`Sample Exam Questions.pdf` 的 `SAMPLE SET 4`。
 >
 > 参考答案与解析由 GPT-5.5 辅助生成，并结合本站课程笔记与计算复核整理；**非官方答案，仅供参考**。若与课堂讲解或官方答案冲突，以官方答案为准。
 
@@ -201,7 +201,7 @@ title: 试卷题目样例 4
 
 ---
 
-<div class="question-card quiz-card" data-answer="E">
+<div class="question-card quiz-card" data-answer="A">
 
 <p class="question-title"><strong>(1.10)</strong> A company sold 300,000 CNY of existing products costing 150,000 CNY to manufacture. A new product design cost 100,000 CNY to develop and is valued at 200,000 CNY. The new product replaces existing designs, so old designs are valued at 0. What is the present valuation? <strong>[2]</strong></p>
 
@@ -214,8 +214,8 @@ title: 试卷题目样例 4
 </div>
 
 <div class="quiz-explanation">
-<p><strong class="quiz-answer">参考答案：E</strong></p>
-<p>现有产品毛利为 300,000 - 150,000 = 150,000 CNY；新设计价值 200,000 CNY；旧设计为 0。因此估值为 350,000 CNY。</p>
+<p><strong class="quiz-answer">参考答案：A</strong></p>
+<p>按题干给出的净值计算：现有产品毛利为 300,000 - 150,000 = 150,000 CNY；新产品设计价值为 200,000 CNY；但开发该设计已花费 100,000 CNY，旧设计价值为 0。因此 present valuation = 150,000 - 100,000 + 200,000 = 250,000 CNY。</p>
 </div>
 
 </div>
@@ -266,7 +266,31 @@ title: 试卷题目样例 4
 
 ### Q2 Discounted Cash Flow
 
-This question uses the same young-company discounted cash-flow scenario as Sample 2.
+As a young entrepreneur, you would like to guarantee a healthy total cost of ownership via evaluating net present value while utilising discounted cash-flow analysis.
+
+**(a)** Your company is designing a new product that will take three years to design, fabricate, and build. Expenses are `1,000,000 RMB` per year and increase with inflation of `5%` annually. How much must your company quote for delivery in three years if it wants to cover expenses and earn net profit, in today's equivalent currency, of `100,000 RMB`? **[3]**
+
+**(b)** Your company would like to purchase a new machine with purchase price `10 M RMB` and lifetime `5 years`. The machine requires annual maintenance cost `1 M RMB` and annual power cost `0.5 M RMB`. All costs are fixed, with inflation of `10%` applied to power only after year 1.
+
+(i) Demonstrate the total projected costs over the lifetime. **[3]**
+
+(ii) Analyse the total cost of ownership over the lifetime. **[4]**
+
+**(c)** Your company is considering a large assembly facility in Chengdu. Initial setup cost is `6,398 M RMB`. Forecast net income is: Y1 `1,400 M`, Y2 `1,450 M`, Y3 `1,550 M`, Y4 `1,625 M`, Y5 `1,480 M`.
+
+(i) Calculate projected payback time to the nearest month. **[5]**
+
+(ii) Calculate NPV using a discount factor of `5%`. **[5]**
+
+(iii) Comment on attractiveness. **[3]**
+
+**(d)** A cash-flow table with 30-day net payment terms is given below. Determine cumulative cash towards the end of each month `M`. Currency is RMB. **[3]**
+
+|  | M0 | M1 | M2 | M3 | M4 | M5 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Sales Bookings | 10 | 12 | 8 | 20 | 100 | 0 |
+| Shipments | 0 | 10 | 12 | 8 | 20 | 100 |
+| Components Order | 5 | 6 | 4 | 10 | 50 | 0 |
 
 <details>
 <summary>展示参考答案</summary>
@@ -331,10 +355,26 @@ Positive NPV and payback within five years make the investment attractive, thoug
 
 #### Q3(l) DFM and Sustainability
 
+DFM is the process of designing components for ease of manufacturing high-quality products at a lower cost.
+
+(vi) The product development cycle generally consists of initial design, final design, fabrication, production, and product launch. Draw a plot showing the effectiveness of DFM application versus these product development stages, based on both the impact and cost of changes. **[4]**
+
+(vii) Sustainability can balance three main pillars. List any two of these pillars. **[2]**
+
 <details>
 <summary>展示参考答案</summary>
 
 **DFM effectiveness plot:** DFM is most effective during initial design because design decisions have high impact and change costs are low. As the cycle moves through final design, fabrication, production, and product launch, the impact of changes falls while the cost of changes rises.
+
+| Stage | Impact of DFM changes | Cost of changes |
+| --- | --- | --- |
+| Initial design | Highest | Lowest |
+| Final design | High | Low to medium |
+| Fabrication | Medium | Medium |
+| Production | Low | High |
+| Product launch | Lowest | Highest |
+
+In a sketch, draw one downward-sloping line for impact and one upward-sloping line for cost across the five stages.
 
 **Two sustainability pillars:** Environmental, economic, and social are the three pillars; any two are acceptable.
 
@@ -368,17 +408,17 @@ $$
 \bar{x}=98.415\%,\quad s\approx1.205\%
 $$
 
-Using `2 * sigma` control limits:
+PDF 题干没有指定 `2 * sigma`，因此这里按常规 control chart 使用 `3 * sigma` 控制界限：
 
 $$
-UCL=98.415+2(1.205)=100.824\%
+UCL=98.415+3(1.205)=102.028\%
 $$
 
 $$
-LCL=98.415-2(1.205)=96.006\%
+LCL=98.415-3(1.205)=94.801\%
 $$
 
-Sample 6 has yield `94.32%`, which is below LCL. Therefore, the process shows uncontrolled variation and is unstable. On the plot, mark the central line at `98.415%`, UCL at `100.824%`, LCL at `96.006%`, and highlight sample 6 as an out-of-control point.
+Sample 6 has yield `94.32%`, which is below LCL. Therefore, the process shows uncontrolled variation and is unstable. On the plot, mark the central line at `98.415%`, UCL at `102.028%`, LCL at `94.801%`, and highlight sample 6 as an out-of-control point.
 
 </details>
 
@@ -455,7 +495,7 @@ $$
 
 **(vi)** A standard is a recommended or agreed technical/quality practice, often voluntary unless contractually required. A regulation is legally enforceable and issued by an authority; non-compliance can bring legal penalties.
 
-**(vii)** A basic sender/receiver model includes sender, encoding, message, channel, decoding, receiver, noise, and feedback. Interactive communication is richer and two-way: participants exchange messages in real time, clarify meaning, respond to feedback, and adjust communication dynamically. Meetings, calls, and workshops are typical interactive models.
+**(vii)** The most basic sender/receiver model is **sender -> message -> receiver**. Extended versions also include encoding, channel, decoding, noise, and feedback. Interactive communication goes further by making feedback explicit and two-way: participants exchange messages in real time, clarify meaning, respond to feedback, and adjust communication dynamically. Meetings, calls, and workshops are typical interactive models.
 
 </details>
 
