@@ -17,11 +17,14 @@ const SITE_URL = "https://cateds.github.io/EngProjManagement-Finance.md/";
 const GITHUB_URL = "https://github.com/cateds/EngProjManagement-Finance.md";
 const AUTHOR_URL = "https://cateds.github.io/";
 const AUTHOR_NAME = "Cateds";
+const LICENSE_URL = "https://creativecommons.org/licenses/by-sa/4.0/";
 
 const SKIP_BUILD = process.argv.includes("--skip-build");
 const CI = process.env.CI === "true";
 const TAG =
-  process.argv.find((a, i) => a === "--tag" && process.argv[i + 1])?.replace("--tag ", "") ||
+  process.argv
+    .find((a, i) => a === "--tag" && process.argv[i + 1])
+    ?.replace("--tag ", "") ||
   process.env.RELEASE_TAG ||
   "";
 const OUTPUT_FILE = join(OUTPUT_DIR, "EngProjManagement-Finance.pdf");
@@ -34,13 +37,17 @@ async function main() {
   } else {
     console.log("[1/5] Build skipped (public dir already exists)");
     if (!readFileSync(SITEMAP_PATH, "utf-8").trim()) {
-      console.error("❌ Sitemap is empty. Run build first or check public/ dir.");
+      console.error(
+        "❌ Sitemap is empty. Run build first or check public/ dir.",
+      );
       process.exit(1);
     }
   }
 
   if (!readFileSync(SITEMAP_PATH, "utf-8").trim()) {
-    console.error("❌ Sitemap is empty. Build may have failed or enableSiteMap is off.");
+    console.error(
+      "❌ Sitemap is empty. Build may have failed or enableSiteMap is off.",
+    );
     process.exit(1);
   }
 
@@ -84,7 +91,9 @@ async function main() {
   });
   const articles: ArticleData[] = [];
   const partTitles = extractPartTitles();
-  console.log(`   Part titles: ${JSON.stringify(Object.fromEntries(partTitles))}`);
+  console.log(
+    `   Part titles: ${JSON.stringify(Object.fromEntries(partTitles))}`,
+  );
 
   try {
     interface Task {
@@ -126,7 +135,9 @@ async function main() {
           await new Promise((r) => setTimeout(r, 400));
 
           const data = await page.evaluate(() => {
-            const article = document.querySelector<HTMLElement>("#quartz-body .center article");
+            const article = document.querySelector<HTMLElement>(
+              "#quartz-body .center article",
+            );
             if (!article) return null;
 
             const clone = article.cloneNode(true) as HTMLElement;
@@ -145,11 +156,15 @@ async function main() {
             clone.querySelectorAll("details").forEach((d) => {
               d.setAttribute("open", "");
             });
-            clone.querySelectorAll(".callout.is-collapsible.is-collapsed").forEach((c) => {
-              c.classList.remove("is-collapsed");
-              const content = c.querySelector(".callout-content") as HTMLElement;
-              if (content) content.style.gridTemplateRows = "1fr";
-            });
+            clone
+              .querySelectorAll(".callout.is-collapsible.is-collapsed")
+              .forEach((c) => {
+                c.classList.remove("is-collapsed");
+                const content = c.querySelector(
+                  ".callout-content",
+                ) as HTMLElement;
+                if (content) content.style.gridTemplateRows = "1fr";
+              });
 
             const title =
               document.querySelector("h1.article-title")?.textContent?.trim() ||
@@ -160,9 +175,13 @@ async function main() {
           });
 
           if (data && data.content) {
-            const parts = task.localPath.replace(/\/$/, "").split("/").filter(Boolean);
+            const parts = task.localPath
+              .replace(/\/$/, "")
+              .split("/")
+              .filter(Boolean);
             const folder = parts.length > 0 ? parts[0] : ".";
-            const fileName = parts.length > 1 ? parts[parts.length - 1] : "index";
+            const fileName =
+              parts.length > 1 ? parts[parts.length - 1] : "index";
 
             // Skip Part index pages (Part1/index.md, Part2/index.md, etc.)
             if (folder.startsWith("Part") && fileName === "index") {
@@ -195,10 +214,14 @@ async function main() {
       }
     }
 
-    const workers = Array.from({ length: CONCURRENCY }, (_, i) => scrapeWorker(i + 1));
+    const workers = Array.from({ length: CONCURRENCY }, (_, i) =>
+      scrapeWorker(i + 1),
+    );
     await Promise.all(workers);
 
-    articles.sort((a, b) => a.sortKey.localeCompare(b.sortKey, undefined, { numeric: true }));
+    articles.sort((a, b) =>
+      a.sortKey.localeCompare(b.sortKey, undefined, { numeric: true }),
+    );
     console.log(`\n   Extracted ${articles.length}/${urls.length} articles.`);
 
     // Rewrite internal links for PDF
@@ -213,6 +236,7 @@ async function main() {
       githubUrl: GITHUB_URL,
       authorUrl: AUTHOR_URL,
       authorName: AUTHOR_NAME,
+      licenseUrl: LICENSE_URL,
     });
     mkdirSync(OUTPUT_DIR, { recursive: true });
 
@@ -231,8 +255,8 @@ async function main() {
       printBackground: true,
       displayHeaderFooter: true,
       headerTemplate: "<div></div>",
-      footerTemplate: `<div style="font-size:12px;text-align:center;width:100%;color:#a0a8ac;font-family:Inter,sans-serif;">
-        - <span class="pageNumber"></span> -
+      footerTemplate: `<div style="font-size:10px;text-align:center;width:100%;color:#a0a8ac;font-family:Inter,sans-serif;">
+        <span class="pageNumber"></span>
       </div>`,
       margin: {
         top: "2cm",
@@ -244,7 +268,9 @@ async function main() {
 
     await pdfPage.close();
 
-    const size = (readFileSync(OUTPUT_FILE).byteLength / 1024 / 1024).toFixed(1);
+    const size = (readFileSync(OUTPUT_FILE).byteLength / 1024 / 1024).toFixed(
+      1,
+    );
     console.log(`\n✅ PDF saved: ${OUTPUT_FILE} (${size} MB)`);
   } finally {
     await browser.close();
@@ -261,7 +287,9 @@ function getCommonPathPrefix(urls: string[]): string {
 function pdfSortKey(folder: string, fileName: string): string {
   if (folder === ".") return "00-root/__00_index";
   if (folder.startsWith("Part")) {
-    return fileName === "index" ? `${folder}/__00_index` : `${folder}/${fileName}`;
+    return fileName === "index"
+      ? `${folder}/__00_index`
+      : `${folder}/${fileName}`;
   }
   const pageKey = fileName === "index" ? "__00_index" : fileName;
   return `ZZ-${folder}/${pageKey}`;

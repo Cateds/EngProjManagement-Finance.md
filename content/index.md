@@ -44,9 +44,14 @@ GitHub 仓库链接在 [EngProjManagement-Finance.md](https://github.com/Cateds/
 
 - **[[Others/index|杂项]]**
   - [[questions.md|PPT 选择题汇总]]
+  - [[stats.md|考题知识点统计]]
   - [[sample1.md|试卷题目样例 1]]
   - [[sample2.md|试卷题目样例 2]]
   - [[sample3.md|试卷题目样例 3]]
   - [[sample4.md|试卷题目样例 4]]
   - [[sample5.md|试卷题目样例 5]]
   - [[sample6.md|试卷题目样例 6]]
+
+## License
+
+课程笔记内容与导出的 PDF 采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 授权。

@@ -3,6 +3,7 @@ title: 杂项
 ---
 
 - [[questions.md|PPT 选择题汇总]]
+- [[stats.md|考题知识点统计]]
 - [[sample1.md|试卷题目样例 1]]
 - [[sample2.md|试卷题目样例 2]]
 - [[sample3.md|试卷题目样例 3]]

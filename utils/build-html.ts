@@ -8,6 +8,7 @@ interface BuildHtmlOptions {
   githubUrl: string;
   authorUrl: string;
   authorName: string;
+  licenseUrl: string;
 }
 
 interface ArticleData {
@@ -19,16 +20,21 @@ interface ArticleData {
   partTitle?: string;
 }
 
-export function buildHtml(articles: ArticleData[], opts: BuildHtmlOptions): string {
+export function buildHtml(
+  articles: ArticleData[],
+  opts: BuildHtmlOptions,
+): string {
   const articlesHtml = articles
     .map((a, i) => {
       const isIndex = a.path === "/" || a.path === "/index";
       const contentClass = isIndex ? "index-content" : "a-content";
+      const articleClass =
+        a.folder === "Others" ? "article article-misc" : "article";
       const partLabel = a.partTitle
         ? `<div class="part-label">${escapeHtml(a.partTitle)}</div>`
         : "";
       return `
-  <div class="article" id="page-${i}">
+  <div class="${articleClass}" id="page-${i}">
     ${partLabel}
     <h1 class="a-title">${escapeHtml(a.title || "")}</h1>
     <div class="${contentClass}">
@@ -77,6 +83,13 @@ export function buildHtml(articles: ArticleData[], opts: BuildHtmlOptions): stri
         Cateds
       </a>
     </div>
+    <p class="license">
+      <a href="${opts.licenseUrl}">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M15 9.5A3.5 3.5 0 1 0 15 14.5"/><path d="M9 9.5A3.5 3.5 0 1 0 9 14.5"/></svg>
+        CC BY-SA 4.0
+      </a>
+      <span>© 2025-2026 ${escapeHtml(opts.authorName)}</span>
+    </p>
   </div>
 
   ${articlesHtml}

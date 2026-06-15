@@ -71,6 +71,31 @@ body {
   color: #5a6a72;
   font-family: "Inter", sans-serif;
 }
+.cover .license {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+  margin-top: 2em;
+  font-size: 8pt;
+  color: #8a9298;
+}
+.cover .license a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  color: #7a9aaa;
+  text-decoration: none;
+}
+.cover .license svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: #7a9aaa;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 /* ── Part Label ── */
 .part-label {
@@ -499,6 +524,28 @@ body {
 .index-content details details {
   margin-left: 1em;
   font-size: 0.95em;
+}
+.article-misc details,
+.article-misc .callout.is-collapsible,
+.article-misc .quiz-explanation {
+  break-inside: auto;
+  page-break-inside: auto;
+}
+.article-misc details > summary {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.article-misc table {
+  break-inside: auto;
+  page-break-inside: auto;
+  overflow: visible;
+}
+.article-misc thead {
+  display: table-header-group;
+}
+.article-misc tr {
+  break-inside: avoid;
+  page-break-inside: avoid;
 }
 
 /* ── Page break utility ── */
