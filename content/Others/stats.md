@@ -132,6 +132,29 @@ title: 考题知识点统计
 | Tower Crane Task 14 | Sample 3 PDF predecessor 与工程逻辑存在歧义；Sample 6 表中 Task 15 明确依赖 Task 13 和 14。 |
 | Cash-flow 30-day terms | 当前月现金流来自上一月 shipment/order；最后一个月的 shipment 不一定在表内收款。 |
 
+### 4. 常用作题干条件的
+
+> 有些定义、公式、分类提示、判断前提或图表含义，考试常会直接写在题干里。它们不是“不用学”，而是不必把每一句讲义原文都当作背诵对象；重点是看到这些提示时能识别对应知识点，并用来计算、分类、判断或解释。
+
+| 知识点 | 题干可能直接给出的知识点内容/条件 | 仍需自己掌握的部分 |
+| --- | --- | --- |
+| Break-even / CVP | `TC = FC + VCQ`、`REV = SPQ` 的变量定义，fixed/variable cost、selling price、capacity、cost/revenue table，有时会明说 break-even 是 revenue = cost。 | 知道何时令 `REV = TC`；会推 `Q_BE`、profit、安全边际，并能解释图上交点和产量变化。 |
+| Make-or-buy / relevant cost | fixed overhead 是否 avoidable、facility 是否可出租、外购价、变动成本、闲置产能、租金机会等前提。 | 把题干前提转成 relevant cost 判断；unavoidable fixed overhead 不算节省；租金/放弃收入是 opportunity cost。 |
+| DCF / NPV / Payback / BCR | cash flow 时点、discount rate、inflation、initial investment、project life，有时给 discount factors 或要求 year-end cash flow。 | 区分 discounted / undiscounted cash flow；会算 NPV、payback、BCR，并解释正负和大于 1 的含义。 |
+| TCO / lifecycle cost | purchase cost、maintenance、energy use、energy price、inflation、lifetime，并可能提示哪些属于 CAPEX/OPEX。 | 知道 TCO 是生命周期口径；会把一次性成本和每年运营成本统一到同一周期加总，必要时处理通胀。 |
+| CPM / Gantt / Float | activity list、duration、predecessor、network/Gantt 条件、依赖变化通常由题干给出。 | 会 forward/backward pass；找 critical path 和 float；判断零浮动活动或依赖变化对工期的影响。 |
+| Control Chart | data、mean、standard deviation、`2σ`/`3σ` 口径、UCL/LCL 公式或图上的点。 | 会按题干口径算控制限；识别 out-of-control 点或异常模式；解释 control chart 是看过程随时间变化。 |
+| Cp / Cpk | target、tolerance、USL/LSL、process mean、standard deviation 通常在题干给出。 | 知道 `Cp` 看 spread，`Cpk` 同时看偏心；会解释 capability 是否足够，以及过程未受控时的限制。 |
+| Taguchi Loss / Robust Design | target、actual value、`k` 的反推条件、M/X/Z parameter diagram、loss-function 图、noise/control/signal 的情境描述。 | 会用 `L = k(y-m)^2`；识别 nominal/smaller/larger-the-better；把 M/X/Z 或情境映射到 signal/control/noise factors。 |
+| 7QC 工具 | “按频率降序”“随时间观察过程”“组织潜在原因”“检查分布/相关性”等用途描述可能在题干中给出。 | 把描述匹配到 Pareto、Control Chart、Fishbone、Histogram、Scatter 等工具；会说明为什么选该工具。 |
+| WBS / Scope | “hierarchical decomposition of project scope”、100% work、out of scope、deliverable decomposition 等描述。 | 记住 WBS 名称和 100% rule；区分 WBS 与 schedule、Gantt、责任矩阵。 |
+| 公司结构 / 组织成长 | 组织结构图、reporting line、cross-functional team、matrix dual reporting、startup/growth 阶段描述。 | 能把图或描述识别为 startup、functional、divisional、matrix、team-based；理解 structure follows strategy。 |
+| 冲突管理 | 一方让步、双方让步、强行推进、回避、共同解决等场景行为。 | 把行为映射到 avoiding/accommodating/competing/compromising/collaborating；知道大致 win-loss 含义。 |
+| 质量成本 | training、inspection、rework、scrap、warranty、customer complaint 等活动描述。 | 分类为 prevention、appraisal、internal failure、external failure；区分“预防/检查”和“失败后损失”。 |
+| PMI 过程组 / PM 能力 | project phase、管理活动、Talent Triangle 或 leadership/management 行为描述。 | 记住五个 process groups 和 Talent Triangle 名称；把活动或行为匹配到正确类别。 |
+
+最危险的误解是把“题干可能给出知识点内容”理解成“概念名也不用背”。概念名、常见关键词和分类边界仍要熟悉，否则即使题干给了描述，也无法把条件匹配到正确知识点。
+
 ## 课程复习索引
 
 | Lecture | 对应高频考点 |
