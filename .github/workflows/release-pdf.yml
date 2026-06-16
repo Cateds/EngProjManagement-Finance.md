@@ -1,14 +1,49 @@
 name: Build & Attach PDF to Release
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - 'v*'
 
 permissions:
   contents: write
 
 jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    outputs:
+      release_name: ${{ steps.release_name.outputs.name }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Determine release name
+        id: release_name
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BASE=$(date +%Y%m%d)
+          EXISTING=$(gh release list --limit 100 --json tagName --jq '.[].tagName' 2>/dev/null || true)
+          if echo "$EXISTING" | grep -qx "$BASE"; then
+            SUFFIX=1
+            while echo "$EXISTING" | grep -qx "${BASE}-${SUFFIX}"; do
+              SUFFIX=$((SUFFIX + 1))
+            done
+            NAME="${BASE}-${SUFFIX}"
+          else
+            NAME="$BASE"
+          fi
+          echo "name=$NAME" >> "$GITHUB_OUTPUT"
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ github.ref_name }}" \
+            --title "${{ steps.release_name.outputs.name }}" \
+            --notes ""
+
   build-pdf:
+    needs: create-release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,7 +61,6 @@ jobs:
             libcups2t64 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 \
             libgbm1 libpango-1.0-0 libcairo2 libasound2t64 libxshmfence1 \
             fonts-noto-cjk fonts-noto-cjk-extra fonts-cascadia-code
-          # Inter 字体（不在 apt 仓库，手动下载安装）
           mkdir -p ~/.fonts
           wget -q "https://github.com/rsms/inter/releases/download/v4.1/Inter-4.1.zip" -O /tmp/Inter-4.1.zip
           unzip -qo /tmp/Inter-4.1.zip -d /tmp/Inter-4.1
@@ -38,7 +72,7 @@ jobs:
         run: bun run export-pdf --skip-build
         env:
           CI: true
-          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          RELEASE_TAG: ${{ github.ref_name }}
       - name: Generate changelog
         id: changelog
         env:
