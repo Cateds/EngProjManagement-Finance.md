@@ -286,11 +286,11 @@ As a young entrepreneur, you would like to guarantee a healthy total cost of own
 
 **(d)** A cash-flow table with 30-day net payment terms is given below. Determine cumulative cash towards the end of each month `M`. Currency is RMB. **[3]**
 
-|  | M0 | M1 | M2 | M3 | M4 | M5 |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Sales Bookings | 10 | 12 | 8 | 20 | 100 | 0 |
-| Shipments | 0 | 10 | 12 | 8 | 20 | 100 |
-| Components Order | 5 | 6 | 4 | 10 | 50 | 0 |
+|                  |  M0 |  M1 |  M2 |  M3 |  M4 |  M5 |
+| ---------------- | --: | --: | --: | --: | --: | --: |
+| Sales Bookings   |  10 |  12 |   8 |  20 | 100 |   0 |
+| Shipments        |   0 |  10 |  12 |   8 |  20 | 100 |
+| Components Order |   5 |   6 |   4 |  10 |  50 |   0 |
 
 <details>
 <summary>展示参考答案</summary>
@@ -299,12 +299,12 @@ As a young entrepreneur, you would like to guarantee a healthy total cost of own
 
 Expenses with 5% annual inflation:
 
-| Year | Cost (RMB) |
-| --- | ---: |
-| 1 | 1,000,000 |
-| 2 | 1,050,000 |
-| 3 | 1,102,500 |
-| Total | 3,152,500 |
+| Year  | Cost (RMB) |
+| ----- | ---------: |
+| 1     |  1,000,000 |
+| 2     |  1,050,000 |
+| 3     |  1,102,500 |
+| Total |  3,152,500 |
 
 Profit target of 100,000 RMB in today's money converted to year-3 money:
 
@@ -341,13 +341,13 @@ Positive NPV and payback within five years make the investment attractive, thoug
 **(d) Cash flow with 30-day terms**
 
 | Month | Inflow | Outflow | Net cash | Cumulative cash |
-| --- | ---: | ---: | ---: | ---: |
-| M0 | 0 | 0 | 0 | 0 |
-| M1 | 0 | 5 | -5 | -5 |
-| M2 | 10 | 6 | 4 | -1 |
-| M3 | 12 | 4 | 8 | 7 |
-| M4 | 8 | 10 | -2 | 5 |
-| M5 | 20 | 50 | -30 | -25 |
+| ----- | -----: | ------: | -------: | --------------: |
+| M0    |      0 |       0 |        0 |               0 |
+| M1    |      0 |       5 |       -5 |              -5 |
+| M2    |     10 |       6 |        4 |              -1 |
+| M3    |     12 |       4 |        8 |               7 |
+| M4    |      8 |      10 |       -2 |               5 |
+| M5    |     20 |      50 |      -30 |             -25 |
 
 </details>
 
@@ -366,13 +366,13 @@ DFM is the process of designing components for ease of manufacturing high-qualit
 
 **DFM effectiveness plot:** DFM is most effective during initial design because design decisions have high impact and change costs are low. As the cycle moves through final design, fabrication, production, and product launch, the impact of changes falls while the cost of changes rises.
 
-| Stage | Impact of DFM changes | Cost of changes |
-| --- | --- | --- |
-| Initial design | Highest | Lowest |
-| Final design | High | Low to medium |
-| Fabrication | Medium | Medium |
-| Production | Low | High |
-| Product launch | Lowest | Highest |
+| Stage          | Impact of DFM changes | Cost of changes |
+| -------------- | --------------------- | --------------- |
+| Initial design | Highest               | Lowest          |
+| Final design   | High                  | Low to medium   |
+| Fabrication    | Medium                | Medium          |
+| Production     | Low                   | High            |
+| Product launch | Lowest                | Highest         |
 
 In a sketch, draw one downward-sloping line for impact and one upward-sloping line for cost across the five stages.
 
@@ -385,15 +385,15 @@ In a sketch, draw one downward-sloping line for impact and one upward-sloping li
 Which 7QC tool is sorted descending by frequency? Which tool studies process changes over time? Use the 15 yield rates to create a control chart and highlight instability. **[8]**
 
 | Sample | Yield Rate (%) | Sample | Yield Rate (%) |
-| ---: | ---: | ---: | ---: |
-| 1 | 98.50 | 9 | 98.80 |
-| 2 | 97.80 | 10 | 99.00 |
-| 3 | 98.30 | 11 | 99.10 |
-| 4 | 99.10 | 12 | 98.80 |
-| 5 | 99.30 | 13 | 98.90 |
-| 6 | 94.32 | 14 | 99.10 |
-| 7 | 98.40 | 15 | 98.20 |
-| 8 | 98.60 |  |  |
+| -----: | -------------: | -----: | -------------: |
+|      1 |          98.50 |      9 |          98.80 |
+|      2 |          97.80 |     10 |          99.00 |
+|      3 |          98.30 |     11 |          99.10 |
+|      4 |          99.10 |     12 |          98.80 |
+|      5 |          99.30 |     13 |          98.90 |
+|      6 |          94.32 |     14 |          99.10 |
+|      7 |          98.40 |     15 |          98.20 |
+|      8 |          98.60 |        |                |
 
 <details>
 <summary>展示参考答案</summary>
@@ -502,13 +502,13 @@ $$
 #### Q4(d) CPM
 
 | Activity | Duration | Predecessor(s) |
-| --- | ---: | --- |
-| A | 2 | - |
-| B | 1 | - |
-| C | 4 | - |
-| D | 1 | A |
-| E | 2 | B, C, D |
-| F | 7 | C |
+| -------- | -------: | -------------- |
+| A        |        2 | -              |
+| B        |        1 | -              |
+| C        |        4 | -              |
+| D        |        1 | A              |
+| E        |        2 | B, C, D        |
+| F        |        7 | C              |
 
 Plot CPM, perform forward and backward pass, calculate float, define critical path, and discuss a 1-day delay in C. **[17]**
 
@@ -525,14 +525,14 @@ C -> E and F
 
 Forward/backward pass:
 
-| Activity | ES | EF | LS | LF | Float |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| A | 0 | 2 | 6 | 8 | 6 |
-| B | 0 | 1 | 8 | 9 | 8 |
-| C | 0 | 4 | 0 | 4 | 0 |
-| D | 2 | 3 | 8 | 9 | 6 |
-| E | 4 | 6 | 9 | 11 | 5 |
-| F | 4 | 11 | 4 | 11 | 0 |
+| Activity |  ES |  EF |  LS |  LF | Float |
+| -------- | --: | --: | --: | --: | ----: |
+| A        |   0 |   2 |   6 |   8 |     6 |
+| B        |   0 |   1 |   8 |   9 |     8 |
+| C        |   0 |   4 |   0 |   4 |     0 |
+| D        |   2 |   3 |   8 |   9 |     6 |
+| E        |   4 |   6 |   9 |  11 |     5 |
+| F        |   4 |  11 |   4 |  11 |     0 |
 
 Project duration is **11 days**.
 

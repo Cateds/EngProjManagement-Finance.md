@@ -340,14 +340,19 @@ title: 项目范围管理，项目进度管理
 
 每一个块有左上，左下，右上，右下四个块，四个数字，分别对应 最早开始 (Early Start, ES)，最晚开始 (Late Start, LS)，最早完成 (Early Finish, EF)，最晚完成 (Late Finish, LF)。顶上标注的数字是活动持续时间，内部底下标注的数字是总浮动时间 (Total Float, TF)。
 
-在一个块内部的数据关系是
+在一个块内部的数据关系有两种可能性。在我们把开始看作 0 时间点的情况下，块内部的关系是
 
 $$
-\mathrm{EF} = \begin{cases}
-  \mathrm{ES} + \mathrm{D},\ \text{ES = 0} \\
-  \mathrm{ES} + \mathrm{D} - 1,\ \text{ES > 0}
-\end{cases}
+\mathrm{EF} = \mathrm{ES} + \mathrm{D}
 $$
+
+而如果我们把开始看作 1 时间点的情况下，块内部的关系是
+
+$$
+\mathrm{EF} = \mathrm{ES} + \mathrm{D} - 1
+$$
+
+这里的示例图是从 0 开始的，所以我们使用第一种关系。
 
 对于块之间的关系，每个块的 ES 是所有前置活动 EF 的最大值，依次向后传播，直到最后一个活动的 EF 就是项目的完成日期。
 
@@ -357,11 +362,16 @@ $$
 
 对于 LF 和 LS ，有着类似的关系。
 
+对于开始看作 0 时间点的情况，块内部的关系是
+
 $$
-\mathrm{LF} = \begin{cases}
-  \mathrm{LS} + \mathrm{D},\ \text{LS = 0} \\
-  \mathrm{LS} + \mathrm{D} - 1,\ \text{LS > 0}
-\end{cases}
+\mathrm{LS} = \mathrm{LF} - \mathrm{D}
+$$
+
+而对于开始看作 1 时间点的情况，块内部的关系是
+
+$$
+\mathrm{LS} = \mathrm{LF} - \mathrm{D} + 1
 $$
 
 对于反向推进，块内部的计算和正向推进相同；块之间的关系是每个块的 LF 是所有后续活动 LS 的最小值，依次向前传播，直到第一个活动的 LS 就是项目的开始日期。
